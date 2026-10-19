@@ -22,6 +22,16 @@ svg{display:block}
 .spacer{flex:1}
 #themeBtn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;font-size:14px}
 .hero{scroll-margin-top:60px;padding:clamp(32px,6vw,72px) 0 40px;background:radial-gradient(1200px 420px at 85% -10%,var(--sunsoft),transparent),radial-gradient(900px 400px at 0% 0%,var(--soft),transparent)}
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-40px;z-index:-2;background:url(images/hhvn-bg.jpg) center 30%/cover no-repeat;filter:blur(22px) saturate(1.15);opacity:.42}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 35%,transparent) 0%,color-mix(in srgb,var(--bg) 70%,transparent) 65%,var(--bg) 100%)}
+:root[data-theme="dark"] .hero::before{opacity:.22}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero::before{opacity:.22}}
+.program{padding:0 0 8px}
+.program .strip{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:linear-gradient(90deg,var(--soft),var(--sunsoft));border:1px solid var(--line);border-radius:20px;padding:14px 22px}
+.program .strip b{color:var(--brand)}
+.program .strip .sep{width:1px;height:22px;background:var(--line)}
+.program .strip span.t{flex:1;min-width:220px;text-align:justify;text-wrap:pretty;color:var(--ink)}
 .hero-grid{display:grid;gap:32px;grid-template-columns:1.1fr .9fr;align-items:center}
 @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
 .badge{display:inline-block;background:var(--soft);color:var(--brand);padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600}
@@ -227,6 +237,11 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
     </svg>
   </div>
 </div></section>
+
+<section class="program"><div class="wrap"><div class="strip">
+  <b>Hoa hậu Việt Nam 2026 · Miền Hương Sắc</b><i class="sep"></i>
+  <span class="t">“Ánh sáng Công nghệ” là dự án của thí sinh Đinh Diệu Anh trong phần thi <b>“Hiểu từ trái tim – Đại sứ Nhân ái”</b>: mỗi thí sinh một dự án nhân ái, cùng góp những hành động thiết thực, lan tỏa lâu dài cho cộng đồng.</span>
+</div></div></section>
 
 <section><div class="wrap"><div class="quote">“Mỗi em nhỏ đều xứng đáng có cơ hội chạm tới tri thức của thế giới. Công nghệ có thể mở cánh cửa, nhưng tình yêu thương, sự đồng hành và niềm tin mới giúp các em tự tin bước qua cánh cửa ấy.”</div></div></section>
 
@@ -435,7 +450,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
 </div></section>
 </main>
 
-<footer><div class="wrap">Dự án Nhân ái “Ánh sáng Công nghệ” · Đinh Diệu Anh – SBD 186 · Hoa hậu Việt Nam 2026</div></footer>
+<footer><div class="wrap">Dự án Nhân ái “Ánh sáng Công nghệ” · Đinh Diệu Anh – SBD 186 · Hoa hậu Việt Nam 2026 – Miền Hương Sắc<br><small>Đây là trang giới thiệu dự án của thí sinh trong phần thi Đại sứ Nhân ái.</small></div></footer>
 <button id="fab" type="button" aria-label="Về đầu trang">↑</button>
 
 <script>
