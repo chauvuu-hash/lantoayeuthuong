@@ -6,12 +6,13 @@
 <title>Ánh sáng Công nghệ</title>
 <meta name="description" content="Dự án Nhân ái của Đinh Diệu Anh (SBD 186) – Hoa hậu Việt Nam 2026: mang tri thức số đến trẻ em Làng SOS Hải Phòng.">
 <style>
-:root{--bg:#fff8fb;--card:#ffffff;--ink:#2b1a24;--muted:#6d5663;--brand:#b01e5a;--brand2:#e8588f;--soft:#fde4ef;--line:#f0cfdd;--ok:#1f8a5b}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1016;--card:#26171f;--ink:#f6e8ef;--muted:#c3a6b4;--brand:#ff7fb0;--brand2:#ff9cc3;--soft:#3a2230;--line:#4a2f3d;--ok:#52d39a}}
-:root[data-theme="dark"]{--bg:#1a1016;--card:#26171f;--ink:#f6e8ef;--muted:#c3a6b4;--brand:#ff7fb0;--brand2:#ff9cc3;--soft:#3a2230;--line:#4a2f3d;--ok:#52d39a}
+:root{--bg:#fff8fb;--card:#ffffff;--ink:#2b1a24;--muted:#6d5663;--brand:#b01e5a;--brand2:#e8588f;--soft:#fde4ef;--line:#f0cfdd;--ok:#1f8a5b;--sun:#f2a900;--sunsoft:#fff3cf;--sky:#2f8fd8;--skysoft:#dcefff;--onbrand:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1016;--card:#26171f;--ink:#f6e8ef;--muted:#c3a6b4;--brand:#ff7fb0;--brand2:#ff9cc3;--soft:#3a2230;--line:#4a2f3d;--ok:#52d39a;--sun:#ffc94d;--sunsoft:#3d3016;--sky:#6cb6f0;--skysoft:#1d3144;--onbrand:#1a1016}}
+:root[data-theme="dark"]{--bg:#1a1016;--card:#26171f;--ink:#f6e8ef;--muted:#c3a6b4;--brand:#ff7fb0;--brand2:#ff9cc3;--soft:#3a2230;--line:#4a2f3d;--ok:#52d39a;--sun:#ffc94d;--sunsoft:#3d3016;--sky:#6cb6f0;--skysoft:#1d3144;--onbrand:#1a1016}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",system-ui,sans-serif}
+svg{display:block}
 .wrap{max-width:1500px;margin:0 auto;padding-inline:clamp(16px,3vw,40px)}
 .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .topbar-inner{max-width:1500px;margin:0 auto;padding:10px clamp(16px,3vw,40px);display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap}
@@ -20,16 +21,20 @@ body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",sy
 .topbar .home{font-weight:700;color:var(--brand)}
 .spacer{flex:1}
 #themeBtn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;font-size:14px}
-.hero{scroll-margin-top:60px;padding:clamp(40px,8vw,96px) 0 48px;background:radial-gradient(1200px 400px at 80% -10%,var(--soft),transparent)}
+.hero{scroll-margin-top:60px;padding:clamp(32px,6vw,72px) 0 40px;background:radial-gradient(1200px 420px at 85% -10%,var(--sunsoft),transparent),radial-gradient(900px 400px at 0% 0%,var(--soft),transparent)}
+.hero-grid{display:grid;gap:32px;grid-template-columns:1.1fr .9fr;align-items:center}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
 .badge{display:inline-block;background:var(--soft);color:var(--brand);padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600}
 h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.1;margin:14px 0 10px;color:var(--brand)}
 .lead{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--muted);text-align:justify;text-justify:inter-word;text-wrap:pretty}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 .btn{display:inline-block;padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:600;border:2px solid var(--brand)}
-.btn.primary{background:var(--brand);color:#fff}
+.btn.primary{background:var(--brand);color:var(--onbrand)}
 .btn.ghost{color:var(--brand)}
-:root[data-theme="dark"] .btn.primary{color:#1a1016}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#1a1016}}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto}
+.hero-art .photo{margin:0}
+.photo img{width:100%;height:auto;border-radius:20px;display:block;object-fit:cover}
 section{padding:44px 0;scroll-margin-top:60px}
 h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 6px;color:var(--brand)}
 .sub{color:var(--muted);margin:0 0 24px;text-align:justify;text-wrap:pretty}
@@ -38,32 +43,131 @@ p{text-align:justify;text-justify:inter-word;text-wrap:pretty}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
 .card h3{margin:0 0 8px;font-size:1.1rem}
 .card p{margin:0;color:var(--muted)}
-.num{font-size:2.4rem;font-weight:800;color:var(--brand);line-height:1}
-.stat small{display:block;color:var(--muted);margin-top:6px}
+.card.vis{padding:0;overflow:hidden}
+.card.vis .art{background:var(--soft)}
+.card.vis .art svg{width:100%;height:auto}
+.card.vis .body{padding:18px 22px 22px}
+.cap{display:inline-block;margin-top:10px;font-size:12px;color:var(--muted)}
+.ico{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.chip{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;margin-bottom:12px;background:var(--soft);color:var(--brand)}
+.chip.sun{background:var(--sunsoft);color:var(--sun)}
+.chip.sky{background:var(--skysoft);color:var(--sky)}
+.chip .ico{width:28px;height:28px}
 ul.chk{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 ul.chk li{display:flex;gap:10px;align-items:flex-start}
 ul.chk .ic{color:var(--ok);font-weight:700}
 ul.chk .txt{flex:1;min-width:0;text-align:justify;text-wrap:pretty}
-.steps{counter-reset:s;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative}
-.step b.t{color:var(--brand)}
-.step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:18px;background:var(--brand);color:#fff;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700}
-:root[data-theme="dark"] .step::before{color:#1a1016}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step::before{color:#1a1016}}
+.safe{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:14px}
+.safe .it{display:flex;gap:12px;align-items:flex-start;background:var(--skysoft);border-radius:14px;padding:14px;color:var(--ink)}
+.safe .it .ico{color:var(--sky);width:30px;height:30px}
+.safe .it span{flex:1;min-width:0;font-size:14px}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:36px}
+.tl::before{content:"";position:absolute;left:12.5%;right:12.5%;top:28px;height:4px;background:linear-gradient(90deg,var(--brand2),var(--sun),var(--sky));border-radius:4px}
+.tl .m{position:relative;text-align:center;padding:0 12px}
+.tl .dot{width:60px;height:60px;border-radius:50%;margin:0 auto 12px;background:var(--card);border:4px solid var(--brand);display:grid;place-items:center;color:var(--brand);position:relative;z-index:1}
+.tl .m:nth-child(2) .dot{border-color:var(--sun);color:var(--sun)}
+.tl .m:nth-child(3) .dot{border-color:var(--sky);color:var(--sky)}
+.tl .m:nth-child(4) .dot{border-color:var(--ok);color:var(--ok)}
+.tl .when{font-weight:700;color:var(--brand)}
+.tl .m p{margin:6px 0 0;color:var(--muted);font-size:14.5px;text-align:center}
+@media (max-width:760px){
+  .tl{grid-template-columns:1fr;gap:20px}
+  .tl::before{left:30px;right:auto;top:10px;bottom:10px;width:4px;height:auto}
+  .tl .m{display:grid;grid-template-columns:60px 1fr;gap:0 16px;text-align:left;padding:0}
+  .tl .dot{margin:0;grid-row:span 2}
+  .tl .m p{text-align:left}
+}
+/* stats */
+.stats{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center}
+.stat .ring{width:104px;height:104px;margin:0 auto 10px;position:relative}
+.stat .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.stat .ring .bg{stroke:var(--line)}
+.stat .ring .fg{stroke:var(--brand);stroke-linecap:round;transition:stroke-dashoffset 1.2s ease}
+.stat .ring b{position:absolute;inset:0;display:grid;place-items:center;font-size:1.3rem;color:var(--brand)}
+.stat .big{width:104px;height:104px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:var(--sunsoft);color:var(--sun);font-weight:800;font-size:1.5rem}
+.stat small{display:block;color:var(--muted)}
+/* budget */
+.bar{display:flex;height:40px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:12px 0 22px;font-size:14px;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;background:var(--c)}
+.pkg{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:24px}
+.pkg .p{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.pkg .p .ico{margin:0 auto 6px;width:32px;height:32px;color:var(--brand)}
+.pkg .p b{display:block}
+.pkg .p small{color:var(--muted)}
+.ba{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:24px}
+.ba figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.ba figcaption{padding:12px 18px;font-weight:600}
+.ba figcaption small{display:block;font-weight:400;color:var(--muted)}
+.ba svg{width:100%;height:auto;background:var(--soft)}
+.tw{overflow-x:auto}
 table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
 th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--soft);color:var(--brand)}
-.tw{overflow-x:auto}
+/* ecosystem */
+.eco{display:none;margin:0 auto 24px;max-width:760px}
+.eco svg{width:100%;height:auto}
+@media (min-width:720px){.eco{display:block}}
+.flow{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:22px 0 8px}
+.flow .f{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;position:relative}
+.flow .f:not(:last-child)::after{content:"➜";position:absolute;right:-17px;top:50%;transform:translateY(-50%);color:var(--brand);font-size:20px;z-index:2}
+@media (max-width:700px){.flow .f:not(:last-child)::after{content:"⬇";right:50%;top:auto;bottom:-20px;transform:translateX(50%)}}
+.flow .f b{display:block;margin-bottom:4px}
+.flow .f p{margin:0;color:var(--muted);font-size:14.5px}
+.spread{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.spread span{background:var(--sunsoft);color:var(--ink);padding:6px 14px;border-radius:999px;font-size:14px}
+.protect{display:flex;gap:18px;align-items:flex-start;background:var(--skysoft);border-radius:20px;padding:22px;margin-top:26px}
+.protect .ico{width:48px;height:48px;color:var(--sky)}
+.protect h3{margin:0 0 6px}
+.protect .txt{flex:1;min-width:0}
+.protect p{margin:0 0 8px}
+.gallery{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.gallery figure{margin:0}
+.gallery figcaption{font-size:13px;color:var(--muted);margin-top:6px}
 .quote{border-left:5px solid var(--brand2);background:var(--soft);padding:18px 22px;border-radius:0 14px 14px 0;font-size:1.15rem;font-style:italic}
 .note{font-size:13px;color:var(--muted);background:var(--soft);padding:8px 12px;border-radius:10px;display:inline-block}
 footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);text-align:center}
-#fab{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;border:none;background:var(--brand);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.2s;z-index:60}
+#fab{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;border:none;background:var(--brand);color:var(--onbrand);font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.2s;z-index:60}
 #fab.show{opacity:1;pointer-events:auto}
-:root[data-theme="dark"] #fab{color:#1a1016}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #fab{color:#1a1016}}
 </style>
 </head>
 <body>
+
+<!-- Bộ icon dùng chung -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-pc" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+<symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".8"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 7h6"/></symbol>
+<symbol id="i-game" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4M16 12h.01M18 14h.01"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+<symbol id="i-ai" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4M10 14l2-5 2 5M10.8 12.8h2.4"/></symbol>
+<symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14a6.5 6.5 0 0 1 3.5 6"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L15.5 10"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3M12 15v2"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M6 21h12M5 7h14M5 7l-3 7a3.5 3.5 0 0 0 6 0zM19 7l-3 7a3.5 3.5 0 0 0 6 0z"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></symbol>
+<symbol id="i-survey" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3M9 11h6M9 15h4M8 11h.01M8 15h.01"/></symbol>
+<symbol id="i-class" viewBox="0 0 24 24"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/><circle cx="12" cy="9" r="1.8"/><path d="M8.5 14a3.5 3.5 0 0 1 7 0"/></symbol>
+<symbol id="i-online" viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="11" rx="2"/><path d="M17 9l4-2v8l-4-2M7 20h6"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 14v4M8 21h8M9 18h6"/></symbol>
+<symbol id="i-expert" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0M9.5 8h5"/></symbol>
+<symbol id="i-uni" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></symbol>
+<symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 5 5l-9.5 9.5a2.1 2.1 0 0 1-3-3zM14.5 6.5l3-3a4 4 0 0 0-5 5"/></symbol>
+<symbol id="i-spread" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.5"/><circle cx="4.5" cy="5" r="1.8"/><circle cx="19.5" cy="5" r="1.8"/><circle cx="4.5" cy="19" r="1.8"/><circle cx="19.5" cy="19" r="1.8"/><path d="M10 10L6 6.5M14 10l4-3.5M10 14l-4 3.5M14 14l4 3.5"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="i-money" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.8"/><path d="M6 9.5h.01M18 14.5h.01"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M12 8v8M8 12h8"/><circle cx="12" cy="12" r="9"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+<symbol id="i-shop" viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9a3 3 0 0 0 5.3 1.8A3 3 0 0 0 14.7 10.8 3 3 0 0 0 20 9M10 20v-5h4v5"/></symbol>
+<symbol id="i-display" viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4M8 9l3 2-3 2"/></symbol>
+</defs></svg>
+
 <header class="topbar"><div class="topbar-inner">
   <a class="home" href="#top">🏠 Trang chủ</a>
   <a href="#van-de">Vấn đề</a><a href="#giai-phap">Giải pháp</a><a href="#hanh-trinh">Lộ trình</a>
@@ -73,11 +177,45 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
 </div></header>
 
 <main>
-<section class="hero" id="top"><div class="wrap">
-  <span class="badge">Đại sứ Nhân ái · Hoa hậu Việt Nam 2026 · SBD 186</span>
-  <h1>Ánh sáng Công nghệ</h1>
-  <p class="lead">Dự án Nhân ái của Đinh Diệu Anh, thí điểm tại Làng trẻ em SOS Hải Phòng. Chúng tôi không chỉ trao cho các em một chiếc máy tính, mà trao một “chiếc cần câu tri thức”: biết tự học, biết dùng công nghệ và AI một cách an toàn, và tự mở ra cơ hội cho tương lai của mình.</p>
-  <div class="cta"><a class="btn primary" href="#dong-hanh">Cùng đồng hành</a><a class="btn ghost" href="#giai-phap">Xem dự án</a></div>
+<section class="hero" id="top"><div class="wrap hero-grid">
+  <div>
+    <span class="badge">Đại sứ Nhân ái · Hoa hậu Việt Nam 2026 · SBD 186</span>
+    <h1>Ánh sáng Công nghệ</h1>
+    <p class="lead">Dự án Nhân ái của Đinh Diệu Anh, thí điểm tại Làng trẻ em SOS Hải Phòng. Chúng tôi không chỉ trao cho các em một chiếc máy tính, mà trao một “chiếc cần câu tri thức”: biết tự học, biết dùng công nghệ và AI một cách an toàn, và tự mở ra cơ hội cho tương lai của mình.</p>
+    <div class="cta"><a class="btn primary" href="#dong-hanh">Cùng đồng hành</a><a class="btn ghost" href="#giai-phap">Xem dự án</a></div>
+  </div>
+  <div class="hero-art">
+    <!-- Ảnh thật (nếu có): đặt file images/hero.jpg, ảnh sẽ tự thay minh họa -->
+    <figure class="photo" id="heroPhoto" hidden><img src="images/hero.jpg" alt="Diệu Anh cùng các em nhỏ tại Làng trẻ em SOS Hải Phòng"></figure>
+    <svg id="heroArt" viewBox="0 0 520 400" role="img" aria-label="Minh họa: ánh sáng từ chiếc máy tính chiếu lên những cuốn sách, ngôi sao và trái tim">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--sun)" stop-opacity=".55"/><stop offset="1" stop-color="var(--sun)" stop-opacity="0"/></radialGradient>
+      </defs>
+      <circle cx="260" cy="170" r="170" fill="url(#glow)"/>
+      <g stroke="var(--sun)" stroke-width="5" stroke-linecap="round" opacity=".9">
+        <path d="M260 30v34M170 62l20 28M350 62l-20 28M110 130l32 10M410 130l-32 10"/>
+      </g>
+      <!-- laptop -->
+      <rect x="150" y="150" width="220" height="140" rx="12" fill="var(--card)" stroke="var(--brand)" stroke-width="6"/>
+      <rect x="166" y="166" width="188" height="108" rx="6" fill="var(--skysoft)"/>
+      <path d="M126 292h268l-18 26H144z" fill="var(--brand)"/>
+      <!-- screen content: bulb + lines -->
+      <circle cx="260" cy="206" r="22" fill="var(--sun)"/>
+      <path d="M252 232h16M254 238h12" stroke="var(--brand)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M190 252h60M270 252h60" stroke="var(--sky)" stroke-width="5" stroke-linecap="round"/>
+      <!-- books -->
+      <g>
+        <rect x="52" y="300" width="110" height="18" rx="3" fill="var(--sky)"/>
+        <rect x="62" y="282" width="96" height="18" rx="3" fill="var(--brand2)"/>
+        <rect x="72" y="264" width="84" height="18" rx="3" fill="var(--sun)"/>
+      </g>
+      <!-- heart + stars -->
+      <path d="M418 262c0-14 20-14 20 0 0 14-20 26-20 26s-20-12-20-26c0-14 20-14 20 0z" fill="var(--brand2)"/>
+      <path d="M440 190l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z" fill="var(--sun)"/>
+      <path d="M92 190l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z" fill="var(--sky)"/>
+      <path d="M40 350h440" stroke="var(--line)" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+  </div>
 </div></section>
 
 <section><div class="wrap"><div class="quote">“Mỗi em nhỏ đều xứng đáng có cơ hội chạm tới tri thức của thế giới. Công nghệ có thể mở cánh cửa, nhưng tình yêu thương, sự đồng hành và niềm tin mới giúp các em tự tin bước qua cánh cửa ấy.”</div></div></section>
@@ -86,57 +224,126 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   <h2>Vì sao dự án này?</h2>
   <p class="sub">Khoảng cách số không chỉ là có hay không có máy tính, mà là em có biết dùng công nghệ để học và có người dẫn đường hay không.</p>
   <div class="grid">
-    <div class="card"><h3>Điều kiện còn hạn chế</h3><p>Phòng máy ít máy, nhiều máy đã cũ; Internet chưa đáp ứng việc học trực tuyến thường xuyên.</p></div>
-    <div class="card"><h3>Từ “biết dùng máy” đến “biết tự học”</h3><p>Các em mới quen kỹ năng cơ bản như Word, gõ phím. Em thích ngoại ngữ, em thích thiết kế, em tò mò về AI, nhưng chưa biết bắt đầu từ đâu.</p></div>
-    <div class="card"><h3>Người đồng hành cũng cần hỗ trợ</h3><p>Các Mẹ SOS dành trọn yêu thương cho các con, nhưng việc hướng dẫn AI và an toàn mạng là thách thức không nhỏ.</p></div>
+    <div class="card vis">
+      <div class="art"><svg viewBox="0 0 320 170" role="img" aria-label="Minh họa: máy tính cũ và mạng yếu">
+        <rect x="70" y="30" width="110" height="78" rx="6" fill="var(--card)" stroke="var(--muted)" stroke-width="4"/>
+        <rect x="80" y="40" width="90" height="58" rx="3" fill="var(--line)"/>
+        <path d="M95 60l60 24M155 60L95 84" stroke="var(--brand)" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+        <path d="M105 108h40l6 18H99z" fill="var(--muted)"/><rect x="88" y="126" width="74" height="8" rx="3" fill="var(--muted)"/>
+        <g transform="translate(205 40)" stroke="var(--muted)" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"><path d="M0 22a34 34 0 0 1 56 0M10 34a20 20 0 0 1 36 0"/><circle cx="28" cy="48" r="2"/></g>
+        <path d="M212 96l40 -50" stroke="var(--brand)" stroke-width="5" stroke-linecap="round"/>
+      </svg></div>
+      <div class="body"><div class="chip"><svg class="ico"><use href="#i-pc"/></svg></div><h3>Điều kiện còn hạn chế</h3><p>Phòng máy ít máy, nhiều máy đã cũ; Internet chưa đáp ứng việc học trực tuyến thường xuyên.</p></div>
+    </div>
+    <div class="card vis">
+      <div class="art"><svg viewBox="0 0 320 170" role="img" aria-label="Minh họa: em nhỏ lúng túng trước máy tính">
+        <rect x="120" y="70" width="110" height="70" rx="6" fill="var(--card)" stroke="var(--sky)" stroke-width="4"/>
+        <path d="M105 140h140l-10 14H115z" fill="var(--sky)"/>
+        <circle cx="75" cy="100" r="18" fill="var(--sun)"/><path d="M45 154a30 30 0 0 1 60 0z" fill="var(--brand2)"/>
+        <g transform="translate(180 20)"><circle cx="30" cy="26" r="26" fill="var(--sunsoft)" stroke="var(--sun)" stroke-width="4"/><text x="30" y="37" text-anchor="middle" font-size="32" font-weight="700" fill="var(--sun)">?</text></g>
+        <path d="M150 105h50M150 120h30" stroke="var(--line)" stroke-width="5" stroke-linecap="round"/>
+      </svg></div>
+      <div class="body"><div class="chip sky"><svg class="ico"><use href="#i-help"/></svg></div><h3>Từ “biết dùng máy” đến “biết tự học”</h3><p>Các em mới quen kỹ năng cơ bản như Word, gõ phím. Em thích ngoại ngữ, em thích thiết kế, em tò mò về AI, nhưng chưa biết bắt đầu từ đâu.</p></div>
+    </div>
+    <div class="card vis">
+      <div class="art"><svg viewBox="0 0 320 170" role="img" aria-label="Minh họa: người lớn đồng hành cùng em nhỏ">
+        <circle cx="120" cy="62" r="24" fill="var(--brand2)"/><path d="M72 154a48 48 0 0 1 96 0z" fill="var(--brand)"/>
+        <circle cx="200" cy="100" r="17" fill="var(--sun)"/><path d="M168 154a32 32 0 0 1 64 0z" fill="var(--sky)"/>
+        <path d="M168 108c0-9 12-9 12 0 0 9-12 16-12 16s-12-7-12-16c0-9 12-9 12 0z" transform="translate(40 -62)" fill="var(--brand2)"/>
+        <path d="M150 112l-16 14" stroke="var(--card)" stroke-width="7" stroke-linecap="round"/>
+      </svg></div>
+      <div class="body"><div class="chip sun"><svg class="ico"><use href="#i-people"/></svg></div><h3>Người đồng hành cũng cần hỗ trợ</h3><p>Các Mẹ SOS dành trọn yêu thương cho các con, nhưng việc hướng dẫn AI và an toàn mạng là thách thức không nhỏ.</p></div>
+    </div>
   </div>
+  <span class="cap">Hình minh họa. Ảnh thật sẽ được bổ sung khi có sự đồng ý của Làng và người giám hộ.</span>
 </div></section>
 
 <section id="giai-phap"><div class="wrap">
   <h2>Giải pháp: Phòng học Ánh sáng Công nghệ</h2>
   <p class="sub">Ba nhóm tuổi, một nền tảng an toàn chung, và một cộng đồng cùng đồng hành.</p>
   <div class="grid">
-    <div class="card"><h3>6–10 tuổi</h3><p>Làm quen thiết bị số, đọc sách điện tử, học qua trò chơi, dùng Internet an toàn cùng người lớn.</p></div>
-    <div class="card"><h3>11–14 tuổi</h3><p>Tìm kiếm và đánh giá thông tin, học ngoại ngữ trực tuyến, thuyết trình, thiết kế nội dung đơn giản, dùng AI có trách nhiệm.</p></div>
-    <div class="card"><h3>15–18 tuổi</h3><p>Ứng dụng AI trong học tập, thiết kế nội dung số, hồ sơ năng lực, học bổng, định hướng nghề nghiệp, làm Đại sứ số.</p></div>
-    <div class="card"><h3>Các Mẹ SOS và cán bộ</h3><p>Được tập huấn để hướng dẫn, giám sát và đồng hành cùng các em sau khi đào tạo kết thúc.</p></div>
+    <div class="card"><div class="chip"><svg class="ico"><use href="#i-game"/></svg></div><h3>6–10 tuổi · Học mà chơi</h3><p>Làm quen thiết bị số, đọc sách điện tử, học qua trò chơi, dùng Internet an toàn cùng người lớn.</p></div>
+    <div class="card"><div class="chip sky"><svg class="ico"><use href="#i-globe"/></svg></div><h3>11–14 tuổi · Khám phá</h3><p>Tìm kiếm và đánh giá thông tin, học ngoại ngữ trực tuyến, thuyết trình, thiết kế nội dung đơn giản, dùng AI có trách nhiệm.</p></div>
+    <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-ai"/></svg></div><h3>15–18 tuổi · Sáng tạo và định hướng</h3><p>Ứng dụng AI trong học tập, thiết kế nội dung số, hồ sơ năng lực, học bổng, định hướng nghề nghiệp, làm Đại sứ số.</p></div>
+    <div class="card"><div class="chip"><svg class="ico"><use href="#i-people"/></svg></div><h3>Các Mẹ SOS và cán bộ</h3><p>Được tập huấn để hướng dẫn, giám sát và đồng hành cùng các em sau khi đào tạo kết thúc.</p></div>
   </div>
-  <h3 style="margin-top:28px">An toàn số cho mọi nhóm tuổi</h3>
-  <ul class="chk">
-    <li><span class="ic">✔</span><span class="txt">Bảo vệ dữ liệu cá nhân và quản lý mật khẩu an toàn.</span></li>
-    <li><span class="ic">✔</span><span class="txt">Nhận diện lừa đảo, giả mạo, đường link nguy hiểm, bắt nạt và xâm hại trên mạng.</span></li>
-    <li><span class="ic">✔</span><span class="txt">Nhận biết tin giả, kiểm chứng thông tin trước khi tin hoặc chia sẻ.</span></li>
-    <li><span class="ic">✔</span><span class="txt">Dùng mạng xã hội và AI có trách nhiệm, cân bằng với học tập, vận động và giao tiếp trực tiếp.</span></li>
-    <li><span class="ic">✔</span><span class="txt">Biết tìm sự giúp đỡ của người lớn khi gặp tình huống không an toàn.</span></li>
-  </ul>
+  <h3 style="margin-top:30px">An toàn số cho mọi nhóm tuổi</h3>
+  <div class="safe">
+    <div class="it"><svg class="ico"><use href="#i-shield"/></svg><span>Bảo vệ dữ liệu cá nhân</span></div>
+    <div class="it"><svg class="ico"><use href="#i-lock"/></svg><span>Mật khẩu an toàn</span></div>
+    <div class="it"><svg class="ico"><use href="#i-link"/></svg><span>Nhận diện lừa đảo, link nguy hiểm, bắt nạt trên mạng</span></div>
+    <div class="it"><svg class="ico"><use href="#i-check"/></svg><span>Kiểm chứng thông tin, nhận biết tin giả</span></div>
+    <div class="it"><svg class="ico"><use href="#i-scale"/></svg><span>Dùng mạng xã hội và AI có trách nhiệm, cân bằng thời gian</span></div>
+    <div class="it"><svg class="ico"><use href="#i-help"/></svg><span>Biết tìm người lớn giúp đỡ khi gặp tình huống không an toàn</span></div>
+  </div>
 </div></section>
 
 <section id="hanh-trinh"><div class="wrap">
   <h2>Lộ trình 12 tháng</h2>
   <p class="sub">Vài buổi trực tiếp để khởi động, sau đó duy trì đều đặn bằng sinh hoạt tại Làng và lớp trực tuyến.</p>
-  <div class="steps">
-    <div class="step"><b class="t">Tháng 1–2 · Chuẩn bị</b><p>Làm việc với Ban quản lý Làng, khảo sát hiện trạng, kêu gọi tài trợ, lập mạng lưới chuyên gia và tình nguyện viên.</p></div>
-    <div class="step"><b class="t">Tháng 3 · Khởi động</b><p>Nâng cấp phòng máy; 1–2 buổi đào tạo trực tiếp; tập huấn các Mẹ SOS; đánh giá đầu vào.</p></div>
-    <div class="step"><b class="t">Tháng 4–12 · Duy trì</b><p>Tự học có hướng dẫn hằng tuần do Đại sứ số và Mẹ SOS dẫn; lớp trực tuyến mỗi tháng với chuyên gia.</p></div>
-    <div class="step"><b class="t">Tháng 12–13 · Đánh giá</b><p>Khảo sát lại, trưng bày sản phẩm của các em, công bố báo cáo tác động công khai.</p></div>
+  <div class="tl">
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-survey"/></svg></div><div class="when">Tháng 1–2 · Chuẩn bị</div><p>Làm việc với Ban quản lý Làng, khảo sát hiện trạng, kêu gọi tài trợ, lập mạng lưới chuyên gia và tình nguyện viên.</p></div>
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-class"/></svg></div><div class="when">Tháng 3 · Khởi động</div><p>Nâng cấp phòng máy; 1–2 buổi đào tạo trực tiếp; tập huấn các Mẹ SOS; đánh giá đầu vào.</p></div>
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-online"/></svg></div><div class="when">Tháng 4–12 · Duy trì</div><p>Tự học có hướng dẫn hằng tuần do Đại sứ số và Mẹ SOS dẫn; lớp trực tuyến mỗi tháng với chuyên gia.</p></div>
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-trophy"/></svg></div><div class="when">Tháng 12–13 · Đánh giá</div><p>Khảo sát lại, trưng bày sản phẩm của các em, công bố báo cáo tác động công khai.</p></div>
   </div>
 </div></section>
 
 <section id="ket-qua"><div class="wrap">
   <h2>Kết quả hướng tới sau 12 tháng</h2>
-  <div class="grid">
-    <div class="card stat"><div class="num">≥ 80%</div><small>em tham gia đều đặn (≥ 75% số buổi)</small></div>
-    <div class="card stat"><div class="num">≥ 70%</div><small>em từ 11 tuổi biết dùng AI và kiểm chứng thông tin</small></div>
-    <div class="card stat"><div class="num">100%</div><small>em được học bộ kiến thức an toàn số</small></div>
-    <div class="card stat"><div class="num">10–12</div><small>Đại sứ số (em lớn kèm em nhỏ)</small></div>
-    <div class="card stat"><div class="num">≥ 15</div><small>chuyên gia, giảng viên, tình nguyện viên trong mạng lưới</small></div>
-    <div class="card stat"><div class="num">≥ 1</div><small>sản phẩm số cho mỗi em, được trưng bày cuối năm</small></div>
+  <p class="sub">Những con số cụ thể để cộng đồng có thể theo dõi và giám sát.</p>
+  <div class="stats">
+    <div class="stat"><div class="ring" data-v="80"><svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3"/><circle class="fg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/></svg><b>≥ 80%</b></div><small>em tham gia đều đặn (≥ 75% số buổi)</small></div>
+    <div class="stat"><div class="ring" data-v="70"><svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3"/><circle class="fg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/></svg><b>≥ 70%</b></div><small>em từ 11 tuổi biết dùng AI và kiểm chứng thông tin</small></div>
+    <div class="stat"><div class="ring" data-v="100"><svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3"/><circle class="fg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/></svg><b>100%</b></div><small>em được học bộ kiến thức an toàn số</small></div>
+    <div class="stat"><div class="big">10–12</div><small>Đại sứ số (em lớn kèm em nhỏ)</small></div>
+    <div class="stat"><div class="big">≥ 15</div><small>chuyên gia, giảng viên, tình nguyện viên trong mạng lưới</small></div>
+    <div class="stat"><div class="big">≥ 1</div><small>sản phẩm số cho mỗi em, trưng bày cuối năm</small></div>
   </div>
 </div></section>
 
 <section id="ngan-sach"><div class="wrap">
   <h2>Nguồn lực và ngân sách</h2>
-  <p class="sub">Ưu tiên tận dụng cơ sở vật chất sẵn có, nâng cấp máy cũ trước và huy động tài trợ hiện vật, chuyên môn. Bảng dưới là trường hợp phải mua mới toàn bộ.</p>
+  <p class="sub">Ưu tiên tận dụng cơ sở vật chất sẵn có, nâng cấp máy cũ trước và huy động tài trợ hiện vật, chuyên môn. Số liệu dưới đây là trường hợp phải mua mới toàn bộ.</p>
+
+  <h3>Năm đầu: tối đa 135 triệu đồng</h3>
+  <div class="bar" role="img" aria-label="Cơ cấu ngân sách năm đầu: thiết bị 120 triệu, bảo trì 10 triệu, dự phòng 5 triệu">
+    <i style="width:88.9%;background:var(--brand)"></i><i style="width:7.4%;background:var(--sun)"></i><i style="width:3.7%;background:var(--sky)"></i>
+  </div>
+  <div class="legend"><span style="--c:var(--brand)">Thiết bị 120 triệu</span><span style="--c:var(--sun)">Vận hành, bảo trì 10 triệu</span><span style="--c:var(--sky)">Dự phòng 5 triệu</span><span>Từ năm 2: tối đa <b>15 triệu/năm</b></span></div>
+
+  <h3>Một gói đồng hành gồm những gì?</h3>
+  <div class="pkg">
+    <div class="p"><svg class="ico"><use href="#i-pc"/></svg><b>Máy tính</b><small>10 bộ + 1 TV/máy chiếu</small></div>
+    <div class="p"><svg class="ico"><use href="#i-wifi"/></svg><b>Internet</b><small>Đường truyền ổn định</small></div>
+    <div class="p"><svg class="ico"><use href="#i-expert"/></svg><b>Chuyên gia</b><small>Dạy và đồng hành</small></div>
+    <div class="p"><svg class="ico"><use href="#i-book"/></svg><b>Học liệu</b><small>Tài nguyên mở, tài khoản học</small></div>
+    <div class="p"><svg class="ico"><use href="#i-tool"/></svg><b>Bảo trì</b><small>Kỹ thuật định kỳ</small></div>
+  </div>
+
+  <h3>Phòng học trước và sau</h3>
+  <div class="ba">
+    <figure><svg viewBox="0 0 360 200" role="img" aria-label="Minh họa phòng máy trước nâng cấp: ít máy, mạng yếu">
+      <rect width="360" height="200" fill="var(--soft)"/>
+      <g fill="var(--card)" stroke="var(--muted)" stroke-width="3"><rect x="40" y="70" width="64" height="44" rx="4"/><rect x="150" y="70" width="64" height="44" rx="4"/></g>
+      <path d="M40 130h64M150 130h64" stroke="var(--muted)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M60 80l24 24M84 80L60 104" stroke="var(--brand)" stroke-width="4" stroke-linecap="round"/>
+      <g transform="translate(262 62)" stroke="var(--muted)" stroke-width="4" fill="none" stroke-linecap="round" opacity=".5"><path d="M0 16a28 28 0 0 1 46 0M10 28a14 14 0 0 1 26 0"/></g>
+      <path d="M268 100l30-34" stroke="var(--brand)" stroke-width="4" stroke-linecap="round"/>
+      <rect x="20" y="170" width="320" height="6" rx="3" fill="var(--line)"/>
+    </svg><figcaption>Trước<small>Ít máy, thiết bị cũ, mạng chưa ổn định</small></figcaption></figure>
+    <figure><svg viewBox="0 0 360 200" role="img" aria-label="Minh họa phòng học sau nâng cấp: 10 máy, TV lớn, mạng ổn định">
+      <rect width="360" height="200" fill="var(--sunsoft)"/>
+      <rect x="110" y="14" width="140" height="42" rx="4" fill="var(--card)" stroke="var(--sky)" stroke-width="3"/><circle cx="180" cy="35" r="9" fill="var(--sun)"/>
+      <g fill="var(--card)" stroke="var(--brand)" stroke-width="3">
+        <rect x="24" y="80" width="42" height="30" rx="3"/><rect x="84" y="80" width="42" height="30" rx="3"/><rect x="144" y="80" width="42" height="30" rx="3"/><rect x="204" y="80" width="42" height="30" rx="3"/><rect x="264" y="80" width="42" height="30" rx="3"/>
+        <rect x="24" y="132" width="42" height="30" rx="3"/><rect x="84" y="132" width="42" height="30" rx="3"/><rect x="144" y="132" width="42" height="30" rx="3"/><rect x="204" y="132" width="42" height="30" rx="3"/><rect x="264" y="132" width="42" height="30" rx="3"/>
+      </g>
+      <g stroke="var(--brand)" stroke-width="4" stroke-linecap="round"><path d="M24 118h42M84 118h42M144 118h42M204 118h42M264 118h42M24 170h42M84 170h42M144 170h42M204 170h42M264 170h42"/></g>
+      <g transform="translate(322 20)" stroke="var(--sky)" stroke-width="4" fill="none" stroke-linecap="round"><path d="M0 14a20 20 0 0 1 28 0M6 22a11 11 0 0 1 16 0"/></g>
+    </svg><figcaption>Sau<small>10 máy, TV/máy chiếu, mạng ổn định, bàn học gọn gàng (hình minh họa)</small></figcaption></figure>
+  </div>
+
   <div class="tw"><table>
     <thead><tr><th>Hạng mục</th><th>Chi phí dự kiến</th><th>Ghi chú</th></tr></thead>
     <tbody>
@@ -154,28 +361,62 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
 <section id="dong-hanh"><div class="wrap">
   <h2>Cùng đồng hành với “Ánh sáng Công nghệ”</h2>
   <p class="sub">Nguồn lực không chỉ đo bằng tiền. Một bộ máy tính, một tài khoản phần mềm, một đường truyền, một giờ chia sẻ của chuyên gia đều là phần quan trọng của dự án.</p>
+  <div class="eco">
+    <svg viewBox="0 0 640 440" role="img" aria-label="Sơ đồ: dự án ở trung tâm, kết nối với sáu nhóm đối tác">
+      <g stroke="var(--line)" stroke-width="3">
+        <path d="M320 210L110 70M320 210L320 50M320 210L530 70M320 210L110 350M320 210L320 370M320 210L530 350"/>
+      </g>
+      <circle cx="320" cy="210" r="62" fill="var(--brand)"/>
+      <text x="320" y="204" text-anchor="middle" font-size="16" font-weight="700" fill="var(--onbrand)">Ánh sáng</text>
+      <text x="320" y="226" text-anchor="middle" font-size="16" font-weight="700" fill="var(--onbrand)">Công nghệ</text>
+      <g font-size="15" text-anchor="middle" fill="var(--ink)" font-weight="600">
+        <g><circle cx="110" cy="70" r="40" fill="var(--soft)" stroke="var(--brand)" stroke-width="3"/><use href="#i-pc" x="94" y="54" width="32" height="32" stroke="var(--brand)" fill="none" stroke-width="1.8"/><text x="110" y="132">Doanh nghiệp công nghệ</text></g>
+        <g><circle cx="320" cy="50" r="40" fill="var(--skysoft)" stroke="var(--sky)" stroke-width="3"/><use href="#i-wifi" x="304" y="34" width="32" height="32" stroke="var(--sky)" fill="none" stroke-width="1.8"/><text x="320" y="112">Viễn thông</text></g>
+        <g><circle cx="530" cy="70" r="40" fill="var(--sunsoft)" stroke="var(--sun)" stroke-width="3"/><use href="#i-ai" x="514" y="54" width="32" height="32" stroke="var(--sun)" fill="none" stroke-width="1.8"/><text x="530" y="132">Chuyên gia AI, an toàn mạng</text></g>
+        <g><circle cx="110" cy="350" r="40" fill="var(--skysoft)" stroke="var(--sky)" stroke-width="3"/><use href="#i-uni" x="94" y="334" width="32" height="32" stroke="var(--sky)" fill="none" stroke-width="1.8"/><text x="110" y="410">Đại học, đơn vị giáo dục</text></g>
+        <g><circle cx="320" cy="370" r="40" fill="var(--soft)" stroke="var(--brand)" stroke-width="3"/><use href="#i-tool" x="304" y="354" width="32" height="32" stroke="var(--brand)" fill="none" stroke-width="1.8"/><text x="320" y="432">Đơn vị cung cấp thiết bị</text></g>
+        <g><circle cx="530" cy="350" r="40" fill="var(--sunsoft)" stroke="var(--sun)" stroke-width="3"/><use href="#i-heart" x="514" y="334" width="32" height="32" stroke="var(--sun)" fill="none" stroke-width="1.8"/><text x="530" y="410">Nhà hảo tâm</text></g>
+      </g>
+    </svg>
+  </div>
   <div class="grid">
-    <div class="card"><h3>💻 Doanh nghiệp công nghệ</h3><p>Máy tính, thiết bị, phần mềm, hỗ trợ kỹ thuật, chuyên gia giảng dạy.</p></div>
-    <div class="card"><h3>📶 Doanh nghiệp viễn thông</h3><p>Đường truyền Internet ổn định cho phòng học.</p></div>
-    <div class="card"><h3>🧠 Chuyên gia AI và an toàn mạng</h3><p>Xây nội dung, dạy và dẫn workshop trực tuyến 1–2 giờ/tháng.</p></div>
-    <div class="card"><h3>🎓 Trường đại học, đơn vị giáo dục</h3><p>Giảng viên, sinh viên tình nguyện, học liệu, khóa học, tài khoản ngoại ngữ.</p></div>
-    <div class="card"><h3>🛠️ Đơn vị cung cấp thiết bị</h3><p>Bảo trì, bảo dưỡng định kỳ.</p></div>
-    <div class="card"><h3>💗 Nhà hảo tâm</h3><p>Hỗ trợ kinh phí cho các hạng mục chưa huy động đủ hiện vật.</p></div>
+    <div class="card"><div class="chip"><svg class="ico"><use href="#i-pc"/></svg></div><h3>Doanh nghiệp công nghệ</h3><p>Máy tính, thiết bị, phần mềm, hỗ trợ kỹ thuật, chuyên gia giảng dạy.</p></div>
+    <div class="card"><div class="chip sky"><svg class="ico"><use href="#i-wifi"/></svg></div><h3>Doanh nghiệp viễn thông</h3><p>Đường truyền Internet ổn định cho phòng học.</p></div>
+    <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-ai"/></svg></div><h3>Chuyên gia AI và an toàn mạng</h3><p>Xây nội dung, dạy và dẫn workshop trực tuyến 1–2 giờ/tháng.</p></div>
+    <div class="card"><div class="chip sky"><svg class="ico"><use href="#i-uni"/></svg></div><h3>Trường đại học, đơn vị giáo dục</h3><p>Giảng viên, sinh viên tình nguyện, học liệu, khóa học, tài khoản ngoại ngữ.</p></div>
+    <div class="card"><div class="chip"><svg class="ico"><use href="#i-tool"/></svg></div><h3>Đơn vị cung cấp thiết bị</h3><p>Bảo trì, bảo dưỡng định kỳ.</p></div>
+    <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-heart"/></svg></div><h3>Nhà hảo tâm</h3><p>Hỗ trợ kinh phí cho các hạng mục chưa huy động đủ hiện vật.</p></div>
   </div>
   <p style="margin-top:20px">Đơn vị đồng hành sẽ nhận báo cáo tác động công khai và được ghi nhận trong truyền thông của dự án. Liên hệ: <b>thông tin liên hệ đang được cập nhật</b>.</p>
 </div></section>
 
 <section id="ben-vung"><div class="wrap">
   <h2>Bền vững và nhân rộng</h2>
-  <ul class="chk">
+  <p class="sub">Từ một phòng học nhỏ ở Hải Phòng đến nhiều nơi cần mô hình này.</p>
+  <div class="flow">
+    <div class="f"><div class="chip"><svg class="ico"><use href="#i-class"/></svg></div><b>1. Học tại Làng</b><p>Đại sứ số kèm em nhỏ; Mẹ SOS và cán bộ duy trì sinh hoạt hằng tuần.</p></div>
+    <div class="f"><div class="chip sky"><svg class="ico"><use href="#i-online"/></svg></div><b>2. Học cùng mentor trực tuyến</b><p>Chuyên gia, giảng viên, sinh viên ở nhiều nơi đồng hành mỗi tháng.</p></div>
+    <div class="f"><div class="chip sun"><svg class="ico"><use href="#i-spread"/></svg></div><b>3. Lan tỏa ra cộng đồng</b><p>Đóng gói bộ mô hình, học liệu số để chuyển giao.</p></div>
+  </div>
+  <div class="spread"><span>Các Làng trẻ em SOS khác</span><span>Trung tâm bảo trợ xã hội</span><span>Mái ấm, cơ sở chăm sóc trẻ</span><span>Trường học vùng khó khăn</span></div>
+  <ul class="chk" style="margin-top:22px">
     <li><span class="ic">✔</span><span class="txt"><b>Đại sứ số:</b> em lớn kèm em nhỏ, tự duy trì trong chính cộng đồng Làng.</span></li>
     <li><span class="ic">✔</span><span class="txt"><b>Mẹ SOS và cán bộ</b> được trang bị kiến thức để tiếp tục hướng dẫn, giám sát các em.</span></li>
     <li><span class="ic">✔</span><span class="txt"><b>Đào tạo trực tuyến</b> giúp chuyên gia ở mọi nơi cùng đồng hành mà không tốn chi phí đi lại.</span></li>
     <li><span class="ic">✔</span><span class="txt"><b>Học liệu số</b> được lưu trữ, cập nhật hằng năm và dùng lại cho các khóa sau.</span></li>
-    <li><span class="ic">✔</span><span class="txt"><b>Nhân rộng:</b> đóng gói thành bộ mô hình để chuyển giao cho các Làng SOS khác, trung tâm bảo trợ, mái ấm và trường học vùng khó khăn.</span></li>
   </ul>
-  <h3 style="margin-top:28px">Bảo vệ trẻ em là nguyên tắc số một</h3>
-  <p>Dự án thực hiện cùng Ban quản lý Làng; chuyên gia, tình nguyện viên cam kết quy tắc ứng xử bảo vệ trẻ em; hình ảnh và thông tin của các em chỉ sử dụng khi được đồng ý.</p>
+  <div class="protect">
+    <svg class="ico"><use href="#i-shield"/></svg>
+    <div class="txt"><h3>Bảo vệ trẻ em là nguyên tắc số một</h3>
+    <p>Dự án thực hiện cùng Ban quản lý Làng; chuyên gia, tình nguyện viên cam kết quy tắc ứng xử bảo vệ trẻ em; hình ảnh và thông tin của các em chỉ sử dụng khi được đồng ý.</p>
+    <p>Vì vậy, hình ảnh trên trang ưu tiên góc nghiêng, bàn tay, màn hình và hoạt động nhóm, thay vì ảnh cận mặt.</p></div>
+  </div>
+</div></section>
+
+<section id="hinh-anh" hidden><div class="wrap">
+  <h2>Hình ảnh hoạt động</h2>
+  <p class="sub">Những khoảnh khắc thật, được chia sẻ khi có sự đồng ý của Làng và người giám hộ.</p>
+  <div class="gallery" id="gal"></div>
 </div></section>
 
 <section><div class="wrap"><div class="quote">“Nhân ái không phải là làm thay một người trên hành trình của họ. Nhân ái là trao thêm điều kiện, tri thức và cơ hội để họ có thể tự bước đi bằng chính năng lực của mình.”<br><b style="font-style:normal">— Đinh Diệu Anh, SBD 186</b></div></div></section>
@@ -197,6 +438,27 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   });
   addEventListener('scroll',function(){fab.classList.toggle('show',scrollY>400);},{passive:true});
   fab.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'});});
+
+  // vòng tròn chỉ số: chạy khi cuộn tới
+  var rings=document.querySelectorAll('.ring');
+  function fill(r){r.querySelector('.fg').style.strokeDashoffset=100-Number(r.dataset.v);}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){fill(e.target);io.unobserve(e.target);}});},{threshold:.4});
+    rings.forEach(function(r){io.observe(r);});
+  } else rings.forEach(fill);
+
+  // ảnh thật tùy chọn: images/hero.jpg và images/photo-1..6.jpg (có file thì hiện, không có thì bỏ qua)
+  var hero=document.getElementById('heroPhoto'), art=document.getElementById('heroArt');
+  var hi=new Image(); hi.onload=function(){hero.hidden=false; art.style.display='none';}; hi.src='images/hero.jpg';
+  var gal=document.getElementById('gal'), sec=document.getElementById('hinh-anh');
+  for(var i=1;i<=6;i++){(function(i){
+    var im=new Image(); im.alt='Hoạt động của dự án Ánh sáng Công nghệ';
+    im.onload=function(){
+      var f=document.createElement('figure'); f.className='photo'; f.appendChild(im);
+      gal.appendChild(f); sec.hidden=false;
+    };
+    im.src='images/photo-'+i+'.jpg';
+  })(i);}
 })();
 </script>
 </body>
