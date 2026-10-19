@@ -8,5 +8,5 @@ Trang web giới thiệu Dự án Nhân ái "Ánh sáng Công nghệ" (Đinh Di�
 
 ## Ảnh thật
 Đặt ảnh vào thư mục `images/` (chỉ dùng ảnh đã được Làng SOS và người giám hộ đồng ý):
-- `images/hero.jpg` – ảnh đầu trang, tự thay hình minh họa.
+- `images/dieu-anh.jpg` – ảnh Đinh Diệu Anh ở đầu trang (đã có), tự thay hình minh họa.
 - `images/photo-1.jpg` … `photo-6.jpg` – mục "Hình ảnh hoạt động" (tự hiện khi có file).

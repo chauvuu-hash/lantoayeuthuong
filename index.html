@@ -33,7 +33,12 @@ h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.1;margin:14px 0 10px;color:v
 .btn.ghost{color:var(--brand)}
 .hero-art{position:relative}
 .hero-art svg{width:100%;height:auto}
-.hero-art .photo{margin:0}
+.hero-art .photo{margin:0 auto;max-width:440px}
+.hero-art .photo img{box-shadow:0 18px 40px rgba(176,30,90,.25);border:6px solid var(--card)}
+.hero-art .photo figcaption{text-align:center;font-size:13px;color:var(--muted);margin-top:10px}
+.who{display:flex;gap:18px;align-items:center}
+.who img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:3px solid var(--brand2);flex:none}
+.who .t{flex:1;min-width:0}
 .photo img{width:100%;height:auto;border-radius:20px;display:block;object-fit:cover}
 section{padding:44px 0;scroll-margin-top:60px}
 h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 6px;color:var(--brand)}
@@ -186,7 +191,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   </div>
   <div class="hero-art">
     <!-- Ảnh thật (nếu có): đặt file images/hero.jpg, ảnh sẽ tự thay minh họa -->
-    <figure class="photo" id="heroPhoto" hidden><img src="images/hero.jpg" alt="Diệu Anh cùng các em nhỏ tại Làng trẻ em SOS Hải Phòng"></figure>
+    <figure class="photo" id="heroPhoto" hidden><img src="images/dieu-anh.jpg" alt="Đinh Diệu Anh, số báo danh 186, Hoa hậu Việt Nam 2026, cầm linh vật Nhân ái" width="900" height="1349"><figcaption>Đinh Diệu Anh · SBD 186 · Dự án Nhân ái “Ánh sáng Công nghệ”</figcaption></figure>
     <svg id="heroArt" viewBox="0 0 520 400" role="img" aria-label="Minh họa: ánh sáng từ chiếc máy tính chiếu lên những cuốn sách, ngôi sao và trái tim">
       <defs>
         <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="var(--sun)" stop-opacity=".55"/><stop offset="1" stop-color="var(--sun)" stop-opacity="0"/></radialGradient>
@@ -419,7 +424,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   <div class="gallery" id="gal"></div>
 </div></section>
 
-<section><div class="wrap"><div class="quote">“Nhân ái không phải là làm thay một người trên hành trình của họ. Nhân ái là trao thêm điều kiện, tri thức và cơ hội để họ có thể tự bước đi bằng chính năng lực của mình.”<br><b style="font-style:normal">— Đinh Diệu Anh, SBD 186</b></div></div></section>
+<section><div class="wrap"><div class="quote who"><img src="images/dieu-anh.jpg" alt="Đinh Diệu Anh" loading="lazy" onerror="this.remove()"><div class="t">“Nhân ái không phải là làm thay một người trên hành trình của họ. Nhân ái là trao thêm điều kiện, tri thức và cơ hội để họ có thể tự bước đi bằng chính năng lực của mình.”<br><b style="font-style:normal">— Đinh Diệu Anh, SBD 186</b></div></div></div></section>
 </main>
 
 <footer><div class="wrap">Dự án Nhân ái “Ánh sáng Công nghệ” · Đinh Diệu Anh – SBD 186 · Hoa hậu Việt Nam 2026</div></footer>
@@ -449,7 +454,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
 
   // ảnh thật tùy chọn: images/hero.jpg và images/photo-1..6.jpg (có file thì hiện, không có thì bỏ qua)
   var hero=document.getElementById('heroPhoto'), art=document.getElementById('heroArt');
-  var hi=new Image(); hi.onload=function(){hero.hidden=false; art.style.display='none';}; hi.src='images/hero.jpg';
+  var hi=new Image(); hi.onload=function(){hero.hidden=false; art.style.display='none';}; hi.src='images/dieu-anh.jpg';
   var gal=document.getElementById('gal'), sec=document.getElementById('hinh-anh');
   for(var i=1;i<=6;i++){(function(i){
     var im=new Image(); im.alt='Hoạt động của dự án Ánh sáng Công nghệ';
