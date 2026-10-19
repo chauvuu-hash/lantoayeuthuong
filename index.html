@@ -36,6 +36,11 @@ h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.1;margin:14px 0 10px;color:v
 .hero-art .photo{margin:0 auto;max-width:440px}
 .hero-art .photo img{box-shadow:0 18px 40px rgba(176,30,90,.25);border:6px solid var(--card)}
 .hero-art .photo figcaption{text-align:center;font-size:13px;color:var(--muted);margin-top:10px}
+.final{display:grid;gap:24px;grid-template-columns:minmax(0,440px) 1fr;align-items:center;justify-content:center}
+.final .shot{margin:0}
+.final .shot img{width:100%;height:auto;border-radius:20px;display:block}
+.final .shot figcaption{text-align:center;font-size:13px;color:var(--muted);margin-top:8px}
+@media (max-width:860px){.final{grid-template-columns:1fr}}
 .who{display:flex;gap:18px;align-items:center}
 .who img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 18%;border:3px solid var(--brand2);flex:none}
 .who .t{flex:1;min-width:0}
@@ -424,7 +429,10 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   <div class="gallery" id="gal"></div>
 </div></section>
 
-<section><div class="wrap"><div class="quote who"><img src="images/dieu-anh.jpg" alt="Đinh Diệu Anh" loading="lazy" onerror="this.remove()"><div class="t">“Nhân ái không phải là làm thay một người trên hành trình của họ. Nhân ái là trao thêm điều kiện, tri thức và cơ hội để họ có thể tự bước đi bằng chính năng lực của mình.”<br><b style="font-style:normal">— Đinh Diệu Anh, SBD 186</b></div></div></div></section>
+<section><div class="wrap final">
+  <figure class="shot"><img src="images/dieu-anh-ao-dai.jpg" alt="Đinh Diệu Anh, số báo danh 186, trong tà áo dài trắng và nón lá" width="960" height="960" loading="lazy"><figcaption>Đinh Diệu Anh · SBD 186 · Hoa hậu Việt Nam 2026</figcaption></figure>
+  <div class="quote">“Nhân ái không phải là làm thay một người trên hành trình của họ. Nhân ái là trao thêm điều kiện, tri thức và cơ hội để họ có thể tự bước đi bằng chính năng lực của mình.”<br><b style="font-style:normal">— Đinh Diệu Anh, SBD 186</b></div>
+</div></section>
 </main>
 
 <footer><div class="wrap">Dự án Nhân ái “Ánh sáng Công nghệ” · Đinh Diệu Anh – SBD 186 · Hoa hậu Việt Nam 2026</div></footer>
