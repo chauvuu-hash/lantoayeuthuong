@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ánh sáng Công nghệ</title>
+<meta name="description" content="Dự án Nhân ái của Đinh Diệu Anh (SBD 186) – Hoa hậu Việt Nam 2026: mang tri thức số đến trẻ em Làng SOS Hải Phòng.">
+<style>
+:root{--bg:#fff8fb;--card:#ffffff;--ink:#2b1a24;--muted:#6d5663;--brand:#b01e5a;--brand2:#e8588f;--soft:#fde4ef;--line:#f0cfdd;--ok:#1f8a5b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1016;--card:#26171f;--ink:#f6e8ef;--muted:#c3a6b4;--brand:#ff7fb0;--brand2:#ff9cc3;--soft:#3a2230;--line:#4a2f3d;--ok:#52d39a}}
+:root[data-theme="dark"]{--bg:#1a1016;--card:#26171f;--ink:#f6e8ef;--muted:#c3a6b4;--brand:#ff7fb0;--brand2:#ff9cc3;--soft:#3a2230;--line:#4a2f3d;--ok:#52d39a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",system-ui,sans-serif}
+.wrap{max-width:1500px;margin:0 auto;padding-inline:clamp(16px,3vw,40px)}
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1500px;margin:0 auto;padding:10px clamp(16px,3vw,40px);display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap}
+.topbar a{color:var(--ink);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px}
+.topbar a:hover{background:var(--soft)}
+.topbar .home{font-weight:700;color:var(--brand)}
+.spacer{flex:1}
+#themeBtn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;font-size:14px}
+.hero{scroll-margin-top:60px;padding:clamp(40px,8vw,96px) 0 48px;background:radial-gradient(1200px 400px at 80% -10%,var(--soft),transparent)}
+.badge{display:inline-block;background:var(--soft);color:var(--brand);padding:4px 14px;border-radius:999px;font-size:13px;font-weight:600}
+h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.1;margin:14px 0 10px;color:var(--brand)}
+.lead{font-size:clamp(1.05rem,1.8vw,1.3rem);color:var(--muted);text-align:justify;text-justify:inter-word;text-wrap:pretty}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;text-decoration:none;font-weight:600;border:2px solid var(--brand)}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.ghost{color:var(--brand)}
+:root[data-theme="dark"] .btn.primary{color:#1a1016}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#1a1016}}
+section{padding:44px 0;scroll-margin-top:60px}
+h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 6px;color:var(--brand)}
+.sub{color:var(--muted);margin:0 0 24px;text-align:justify;text-wrap:pretty}
+p{text-align:justify;text-justify:inter-word;text-wrap:pretty}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card h3{margin:0 0 8px;font-size:1.1rem}
+.card p{margin:0;color:var(--muted)}
+.num{font-size:2.4rem;font-weight:800;color:var(--brand);line-height:1}
+.stat small{display:block;color:var(--muted);margin-top:6px}
+ul.chk{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.chk li{display:flex;gap:10px;align-items:flex-start}
+ul.chk .ic{color:var(--ok);font-weight:700}
+ul.chk .txt{flex:1;min-width:0;text-align:justify;text-wrap:pretty}
+.steps{counter-reset:s;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative}
+.step b.t{color:var(--brand)}
+.step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:18px;background:var(--brand);color:#fff;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700}
+:root[data-theme="dark"] .step::before{color:#1a1016}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .step::before{color:#1a1016}}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);color:var(--brand)}
+.tw{overflow-x:auto}
+.quote{border-left:5px solid var(--brand2);background:var(--soft);padding:18px 22px;border-radius:0 14px 14px 0;font-size:1.15rem;font-style:italic}
+.note{font-size:13px;color:var(--muted);background:var(--soft);padding:8px 12px;border-radius:10px;display:inline-block}
+footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);text-align:center}
+#fab{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:50%;border:none;background:var(--brand);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:.2s;z-index:60}
+#fab.show{opacity:1;pointer-events:auto}
+:root[data-theme="dark"] #fab{color:#1a1016}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #fab{color:#1a1016}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+  <a class="home" href="#top">🏠 Trang chủ</a>
+  <a href="#van-de">Vấn đề</a><a href="#giai-phap">Giải pháp</a><a href="#hanh-trinh">Lộ trình</a>
+  <a href="#ket-qua">Kết quả</a><a href="#ngan-sach">Nguồn lực</a><a href="#dong-hanh">Đồng hành</a><a href="#ben-vung">Bền vững</a>
+  <span class="spacer"></span>
+  <button id="themeBtn" type="button">🌙 Tối</button>
+</div></header>
+
+<main>
+<section class="hero" id="top"><div class="wrap">
+  <span class="badge">Đại sứ Nhân ái · Hoa hậu Việt Nam 2026 · SBD 186</span>
+  <h1>Ánh sáng Công nghệ</h1>
+  <p class="lead">Dự án Nhân ái của Đinh Diệu Anh, thí điểm tại Làng trẻ em SOS Hải Phòng. Chúng tôi không chỉ trao cho các em một chiếc máy tính, mà trao một “chiếc cần câu tri thức”: biết tự học, biết dùng công nghệ và AI một cách an toàn, và tự mở ra cơ hội cho tương lai của mình.</p>
+  <div class="cta"><a class="btn primary" href="#dong-hanh">Cùng đồng hành</a><a class="btn ghost" href="#giai-phap">Xem dự án</a></div>
+</div></section>
+
+<section><div class="wrap"><div class="quote">“Mỗi đứa trẻ đều xứng đáng có cơ hội chạm tới tri thức của thế giới. Công nghệ có thể mở cánh cửa, nhưng tình yêu thương, sự đồng hành và niềm tin mới giúp các em tự tin bước qua cánh cửa ấy.”</div></div></section>
+
+<section id="van-de"><div class="wrap">
+  <h2>Vì sao dự án này?</h2>
+  <p class="sub">Khoảng cách số không chỉ là có hay không có máy tính, mà là em có biết dùng công nghệ để học và có người dẫn đường hay không.</p>
+  <div class="grid">
+    <div class="card"><h3>Điều kiện còn hạn chế</h3><p>Phòng máy ít máy, nhiều máy đã cũ; Internet chưa đáp ứng việc học trực tuyến thường xuyên.</p></div>
+    <div class="card"><h3>Từ “biết dùng máy” đến “biết tự học”</h3><p>Các em mới quen kỹ năng cơ bản như Word, gõ phím. Em thích ngoại ngữ, em thích thiết kế, em tò mò về AI, nhưng chưa biết bắt đầu từ đâu.</p></div>
+    <div class="card"><h3>Người đồng hành cũng cần hỗ trợ</h3><p>Các Mẹ SOS dành trọn yêu thương cho các con, nhưng việc hướng dẫn AI và an toàn mạng là thách thức không nhỏ.</p></div>
+  </div>
+</div></section>
+
+<section id="giai-phap"><div class="wrap">
+  <h2>Giải pháp: Phòng học Ánh sáng Công nghệ</h2>
+  <p class="sub">Ba nhóm tuổi, một nền tảng an toàn chung, và một cộng đồng cùng đồng hành.</p>
+  <div class="grid">
+    <div class="card"><h3>6–10 tuổi</h3><p>Làm quen thiết bị số, đọc sách điện tử, học qua trò chơi, dùng Internet an toàn cùng người lớn.</p></div>
+    <div class="card"><h3>11–14 tuổi</h3><p>Tìm kiếm và đánh giá thông tin, học ngoại ngữ trực tuyến, thuyết trình, thiết kế nội dung đơn giản, dùng AI có trách nhiệm.</p></div>
+    <div class="card"><h3>15–18 tuổi</h3><p>Ứng dụng AI trong học tập, thiết kế nội dung số, hồ sơ năng lực, học bổng, định hướng nghề nghiệp, làm Đại sứ số.</p></div>
+    <div class="card"><h3>Các Mẹ SOS và cán bộ</h3><p>Được tập huấn để hướng dẫn, giám sát và đồng hành cùng các em sau khi đào tạo kết thúc.</p></div>
+  </div>
+  <h3 style="margin-top:28px">An toàn số cho mọi nhóm tuổi</h3>
+  <ul class="chk">
+    <li><span class="ic">✔</span><span class="txt">Bảo vệ dữ liệu cá nhân và quản lý mật khẩu an toàn.</span></li>
+    <li><span class="ic">✔</span><span class="txt">Nhận diện lừa đảo, giả mạo, đường link nguy hiểm, bắt nạt và xâm hại trên mạng.</span></li>
+    <li><span class="ic">✔</span><span class="txt">Nhận biết tin giả, kiểm chứng thông tin trước khi tin hoặc chia sẻ.</span></li>
+    <li><span class="ic">✔</span><span class="txt">Dùng mạng xã hội và AI có trách nhiệm, cân bằng với học tập, vận động và giao tiếp trực tiếp.</span></li>
+    <li><span class="ic">✔</span><span class="txt">Biết tìm sự giúp đỡ của người lớn khi gặp tình huống không an toàn.</span></li>
+  </ul>
+</div></section>
+
+<section id="hanh-trinh"><div class="wrap">
+  <h2>Lộ trình 12 tháng</h2>
+  <p class="sub">Vài buổi trực tiếp để khởi động, sau đó duy trì đều đặn bằng sinh hoạt tại Làng và lớp trực tuyến.</p>
+  <div class="steps">
+    <div class="step"><b class="t">Tháng 1–2 · Chuẩn bị</b><p>Làm việc với Ban quản lý Làng, khảo sát hiện trạng, kêu gọi tài trợ, lập mạng lưới chuyên gia và tình nguyện viên.</p></div>
+    <div class="step"><b class="t">Tháng 3 · Khởi động</b><p>Nâng cấp phòng máy; 1–2 buổi đào tạo trực tiếp; tập huấn các Mẹ SOS; đánh giá đầu vào.</p></div>
+    <div class="step"><b class="t">Tháng 4–12 · Duy trì</b><p>Tự học có hướng dẫn hằng tuần do Đại sứ số và Mẹ SOS dẫn; lớp trực tuyến mỗi tháng với chuyên gia.</p></div>
+    <div class="step"><b class="t">Tháng 12–13 · Đánh giá</b><p>Khảo sát lại, trưng bày sản phẩm của các em, công bố báo cáo tác động công khai.</p></div>
+  </div>
+</div></section>
+
+<section id="ket-qua"><div class="wrap">
+  <h2>Kết quả hướng tới sau 12 tháng</h2>
+  <div class="grid">
+    <div class="card stat"><div class="num">≥ 80%</div><small>em tham gia đều đặn (≥ 75% số buổi)</small></div>
+    <div class="card stat"><div class="num">≥ 70%</div><small>em từ 11 tuổi biết dùng AI và kiểm chứng thông tin</small></div>
+    <div class="card stat"><div class="num">100%</div><small>em được học bộ kiến thức an toàn số</small></div>
+    <div class="card stat"><div class="num">10–12</div><small>Đại sứ số (em lớn kèm em nhỏ)</small></div>
+    <div class="card stat"><div class="num">≥ 15</div><small>chuyên gia, giảng viên, tình nguyện viên trong mạng lưới</small></div>
+    <div class="card stat"><div class="num">≥ 1</div><small>sản phẩm số cho mỗi em, được trưng bày cuối năm</small></div>
+  </div>
+</div></section>
+
+<section id="ngan-sach"><div class="wrap">
+  <h2>Nguồn lực và ngân sách</h2>
+  <p class="sub">Ưu tiên tận dụng cơ sở vật chất sẵn có, nâng cấp máy cũ trước và huy động tài trợ hiện vật, chuyên môn. Bảng dưới là trường hợp phải mua mới toàn bộ.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Hạng mục</th><th>Chi phí dự kiến</th><th>Ghi chú</th></tr></thead>
+    <tbody>
+      <tr><td>Cơ sở vật chất (phòng, bàn ghế, điện, Internet)</td><td>0 đồng</td><td>Sử dụng sẵn có của Làng</td></tr>
+      <tr><td>10 bộ máy tính + 1 TV/máy chiếu</td><td>120 triệu đồng</td><td>Ưu tiên thiết bị được tài trợ</td></tr>
+      <tr><td>Vận hành, bảo trì</td><td>10 triệu/năm</td><td>Ưu tiên bảo trợ kỹ thuật</td></tr>
+      <tr><td>Chuyên gia, học liệu, nền tảng học</td><td>0 đồng</td><td>Tình nguyện, tài nguyên mở, tài khoản tài trợ</td></tr>
+      <tr><td>Dự phòng</td><td>5 triệu/năm</td><td>Chỉ dùng khi phát sinh</td></tr>
+      <tr><th>Năm đầu</th><th>135 triệu đồng</th><th>120 + 10 + 5</th></tr>
+      <tr><th>Từ năm thứ hai</th><th>tối đa 15 triệu/năm</th><th>10 + 5</th></tr>
+    </tbody></table></div>
+  <p><span class="note">Chi phí thực tế xác định sau khảo sát và báo giá; mọi đóng góp được công khai trong báo cáo định kỳ.</span></p>
+</div></section>
+
+<section id="dong-hanh"><div class="wrap">
+  <h2>Cùng đồng hành với “Ánh sáng Công nghệ”</h2>
+  <p class="sub">Nguồn lực không chỉ đo bằng tiền. Một bộ máy tính, một tài khoản phần mềm, một đường truyền, một giờ chia sẻ của chuyên gia đều là phần quan trọng của dự án.</p>
+  <div class="grid">
+    <div class="card"><h3>💻 Doanh nghiệp công nghệ</h3><p>Máy tính, thiết bị, phần mềm, hỗ trợ kỹ thuật, chuyên gia giảng dạy.</p></div>
+    <div class="card"><h3>📶 Doanh nghiệp viễn thông</h3><p>Đường truyền Internet ổn định cho phòng học.</p></div>
+    <div class="card"><h3>🧠 Chuyên gia AI và an toàn mạng</h3><p>Xây nội dung, dạy và dẫn workshop trực tuyến 1–2 giờ/tháng.</p></div>
+    <div class="card"><h3>🎓 Trường đại học, đơn vị giáo dục</h3><p>Giảng viên, sinh viên tình nguyện, học liệu, khóa học, tài khoản ngoại ngữ.</p></div>
+    <div class="card"><h3>🛠️ Đơn vị cung cấp thiết bị</h3><p>Bảo trì, bảo dưỡng định kỳ.</p></div>
+    <div class="card"><h3>💗 Nhà hảo tâm</h3><p>Hỗ trợ kinh phí cho các hạng mục chưa huy động đủ hiện vật.</p></div>
+  </div>
+  <p style="margin-top:20px">Đơn vị đồng hành sẽ nhận báo cáo tác động công khai và được ghi nhận trong truyền thông của dự án. Liên hệ: <b>thông tin liên hệ đang được cập nhật</b>.</p>
+</div></section>
+
+<section id="ben-vung"><div class="wrap">
+  <h2>Bền vững và nhân rộng</h2>
+  <ul class="chk">
+    <li><span class="ic">✔</span><span class="txt"><b>Đại sứ số:</b> em lớn kèm em nhỏ, tự duy trì trong chính cộng đồng Làng.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Mẹ SOS và cán bộ</b> được trang bị kiến thức để tiếp tục hướng dẫn, giám sát các em.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Đào tạo trực tuyến</b> giúp chuyên gia ở mọi nơi cùng đồng hành mà không tốn chi phí đi lại.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Học liệu số</b> được lưu trữ, cập nhật hằng năm và dùng lại cho các khóa sau.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Nhân rộng:</b> đóng gói thành bộ mô hình để chuyển giao cho các Làng SOS khác, trung tâm bảo trợ, mái ấm và trường học vùng khó khăn.</span></li>
+  </ul>
+  <h3 style="margin-top:28px">Bảo vệ trẻ em là nguyên tắc số một</h3>
+  <p>Dự án thực hiện cùng Ban quản lý Làng; chuyên gia, tình nguyện viên cam kết quy tắc ứng xử bảo vệ trẻ em; hình ảnh và thông tin của các em chỉ sử dụng khi được đồng ý.</p>
+</div></section>
+
+<section><div class="wrap"><div class="quote">“Nhân ái không phải là làm thay một người trên hành trình của họ. Nhân ái là trao thêm điều kiện, tri thức và cơ hội để họ có thể tự bước đi bằng chính năng lực của mình.”<br><b style="font-style:normal">— Đinh Diệu Anh, SBD 186</b></div></div></section>
+</main>
+
+<footer><div class="wrap">Dự án Nhân ái “Ánh sáng Công nghệ” · Đinh Diệu Anh – SBD 186 · Hoa hậu Việt Nam 2026</div></footer>
+<button id="fab" type="button" aria-label="Về đầu trang">↑</button>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('themeBtn'), fab=document.getElementById('fab');
+  function cur(){var t=root.getAttribute('data-theme'); if(t) return t; return matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}
+  function label(){btn.textContent=cur()==='dark'?'☀️ Sáng':'🌙 Tối';}
+  try{var s=localStorage.getItem('theme'); if(s==='light'||s==='dark') root.setAttribute('data-theme',s);}catch(e){}
+  label();
+  btn.addEventListener('click',function(){
+    var n=cur()==='dark'?'light':'dark'; root.setAttribute('data-theme',n);
+    try{localStorage.setItem('theme',n);}catch(e){} label();
+  });
+  addEventListener('scroll',function(){fab.classList.toggle('show',scrollY>400);},{passive:true});
+  fab.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
