@@ -13,11 +13,6 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",system-ui,sans-serif}
 svg{display:block}
-/* nền logo Hoa hậu Việt Nam 2026 (mờ), cố định sau nội dung */
-body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:url(images/hhvn-logo.png) center 55%/min(92vw,1100px) auto no-repeat;opacity:.9}
-:root[data-theme="dark"] body::before{opacity:.35}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{opacity:.35}}
-main,footer{position:relative;z-index:1}
 .wrap{max-width:1500px;margin:0 auto;padding-inline:clamp(16px,3vw,40px)}
 .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .topbar-inner{max-width:1500px;margin:0 auto;padding:10px clamp(16px,3vw,40px);display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap}
@@ -28,11 +23,7 @@ main,footer{position:relative;z-index:1}
 #themeBtn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;font-size:14px}
 .hero{scroll-margin-top:60px;padding:clamp(32px,6vw,72px) 0 40px;background:radial-gradient(1200px 420px at 85% -10%,var(--sunsoft),transparent),radial-gradient(900px 400px at 0% 0%,var(--soft),transparent)}
 .hero{position:relative;overflow:hidden;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:-40px;z-index:-2;background:url(images/hhvn-bg.jpg) center 30%/cover no-repeat;filter:blur(22px) saturate(1.15);opacity:.42}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,color-mix(in srgb,var(--bg) 35%,transparent) 0%,color-mix(in srgb,var(--bg) 70%,transparent) 65%,var(--bg) 100%)}
-:root[data-theme="dark"] .hero::before{opacity:.22}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero::before{opacity:.22}}
-.program{padding:0 0 8px}
+:root[data-theme="dark"] @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .program{padding:0 0 8px}
 .program .strip{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:linear-gradient(90deg,var(--soft),var(--sunsoft));border:1px solid var(--line);border-radius:20px;padding:14px 22px}
 .program .strip b{color:var(--brand)}
 .program .strip .sep{width:1px;height:22px;background:var(--line)}
