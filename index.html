@@ -13,6 +13,11 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Segoe UI",system-ui,sans-serif}
 svg{display:block}
+/* nền logo Hoa hậu Việt Nam 2026 (mờ), cố định sau nội dung */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:url(images/hhvn-logo.png) center 55%/min(92vw,1100px) auto no-repeat;opacity:.9}
+:root[data-theme="dark"] body::before{opacity:.35}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{opacity:.35}}
+main,footer{position:relative;z-index:1}
 .wrap{max-width:1500px;margin:0 auto;padding-inline:clamp(16px,3vw,40px)}
 .topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .topbar-inner{max-width:1500px;margin:0 auto;padding:10px clamp(16px,3vw,40px);display:flex;align-items:center;gap:6px 14px;flex-wrap:wrap}
@@ -31,6 +36,14 @@ svg{display:block}
 .program .strip{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:linear-gradient(90deg,var(--soft),var(--sunsoft));border:1px solid var(--line);border-radius:20px;padding:14px 22px}
 .program .strip b{color:var(--brand)}
 .program .strip .sep{width:1px;height:22px;background:var(--line)}
+.program .strip .logo{height:72px;width:auto;border-radius:14px;flex:none;box-shadow:0 4px 14px rgba(176,30,90,.2)}
+footer .logo{height:64px;width:auto;border-radius:12px;margin:0 auto 12px}
+.tl.five{grid-template-columns:repeat(5,1fr)}
+.tl.five::before{left:10%;right:10%}
+.tl.five .m:nth-child(5) .dot{border-color:var(--brand2);color:var(--brand2)}
+@media (max-width:760px){.tl.five{grid-template-columns:1fr}.tl.five::before{left:30px;right:auto}}
+.quotes{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:22px}
+.quotes .quote{margin:0;font-size:1rem}
 .program .strip span.t{flex:1;min-width:220px;text-align:justify;text-wrap:pretty;color:var(--ink)}
 .hero-grid{display:grid;gap:32px;grid-template-columns:1.1fr .9fr;align-items:center}
 @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
@@ -239,6 +252,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
 </div></section>
 
 <section class="program"><div class="wrap"><div class="strip">
+  <img class="logo" src="images/hhvn-banner.jpg" alt="Logo Hoa hậu Việt Nam 2026 – Miền Hương Sắc" width="198" height="72">
   <b>Hoa hậu Việt Nam 2026 · Miền Hương Sắc</b><i class="sep"></i>
   <span class="t">“Ánh sáng Công nghệ” là dự án của thí sinh Đinh Diệu Anh trong phần thi <b>“Hiểu từ trái tim – Đại sứ Nhân ái”</b>: mỗi thí sinh một dự án nhân ái, cùng góp những hành động thiết thực, lan tỏa lâu dài cho cộng đồng.</span>
 </div></div></section>
@@ -280,17 +294,22 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
       <div class="body"><div class="chip sun"><svg class="ico"><use href="#i-people"/></svg></div><h3>Người đồng hành cũng cần hỗ trợ</h3><p>Các Mẹ SOS dành trọn yêu thương cho các con, nhưng việc hướng dẫn AI và an toàn mạng là thách thức không nhỏ.</p></div>
     </div>
   </div>
+  <div class="quotes">
+    <div class="quote">“Con rất thích máy tính và AI, nhưng con chưa biết phải học từ đâu và dùng những công cụ nào để học đúng cách.”</div>
+    <div class="quote">“Con muốn tự học thiết kế đồ họa và học thêm tiếng Anh, nhưng nhiều khi tìm trên mạng có quá nhiều thông tin nên con không biết tài liệu nào phù hợp với mình.”</div>
+  </div>
+  <p style="margin-top:18px">Những chia sẻ giản dị ấy được ghi nhận trong chuyến thực tế của các thí sinh Hoa hậu Việt Nam 2026 tại Làng trẻ em SOS Hải Phòng ngày 13/10/2026. Điều các em cần là điều kiện để tiếp cận tri thức đúng hướng, cùng những người có chuyên môn sẵn sàng hướng dẫn và đồng hành.</p>
   <span class="cap">Hình minh họa. Ảnh thật sẽ được bổ sung khi có sự đồng ý của Làng và người giám hộ.</span>
 </div></section>
 
 <section id="giai-phap"><div class="wrap">
   <h2>Giải pháp: Phòng học Ánh sáng Công nghệ</h2>
-  <p class="sub">Ba nhóm tuổi, một nền tảng an toàn chung, và một cộng đồng cùng đồng hành.</p>
+  <p class="sub">Trao thiết bị chỉ là trao phương tiện; hướng dẫn các em tự học, tự phát triển mới là giá trị lâu dài. Dự án có ba nhóm tuổi, một nền tảng an toàn chung và một cộng đồng cùng đồng hành, thí điểm cho 121 em tại Làng trẻ em SOS Hải Phòng.</p>
   <div class="grid">
     <div class="card"><div class="chip"><svg class="ico"><use href="#i-game"/></svg></div><h3>6–10 tuổi · Học mà chơi</h3><p>Làm quen thiết bị số, đọc sách điện tử, học qua trò chơi, dùng Internet an toàn cùng người lớn.</p></div>
-    <div class="card"><div class="chip sky"><svg class="ico"><use href="#i-globe"/></svg></div><h3>11–14 tuổi · Khám phá</h3><p>Tìm kiếm và đánh giá thông tin, học ngoại ngữ trực tuyến, thuyết trình, thiết kế nội dung đơn giản, dùng AI có trách nhiệm.</p></div>
-    <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-ai"/></svg></div><h3>15–18 tuổi · Sáng tạo và định hướng</h3><p>Ứng dụng AI trong học tập, thiết kế nội dung số, hồ sơ năng lực, học bổng, định hướng nghề nghiệp, làm Đại sứ số.</p></div>
-    <div class="card"><div class="chip"><svg class="ico"><use href="#i-people"/></svg></div><h3>Các Mẹ SOS và cán bộ</h3><p>Được tập huấn để hướng dẫn, giám sát và đồng hành cùng các em sau khi đào tạo kết thúc.</p></div>
+    <div class="card"><div class="chip sky"><svg class="ico"><use href="#i-globe"/></svg></div><h3>11–14 tuổi · Khám phá</h3><p>Tìm kiếm và đánh giá thông tin, học ngoại ngữ và sáng tạo trên nền tảng trực tuyến; làm quen AI, biết đặt câu hỏi (prompt) đơn giản và bước đầu kiểm chứng thông tin AI đưa ra.</p></div>
+    <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-ai"/></svg></div><h3>15–18 tuổi · Sáng tạo và định hướng</h3><p>Ứng dụng AI trong học tập, thiết kế và xây dựng nội dung số, tự học, lập kế hoạch cá nhân, xây dựng hồ sơ năng lực, tìm học bổng, định hướng nghề nghiệp.</p></div>
+    <div class="card"><div class="chip"><svg class="ico"><use href="#i-people"/></svg></div><h3>Các Mẹ SOS và cán bộ</h3><p>Được tập huấn cách dùng công nghệ và AI, nhận diện nguy cơ trên mạng, đặt quy tắc dùng thiết bị để hướng dẫn, giám sát và đồng hành cùng các em sau khi đào tạo kết thúc.</p></div>
   </div>
   <h3 style="margin-top:30px">An toàn số cho mọi nhóm tuổi</h3>
   <div class="safe">
@@ -304,42 +323,54 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
 </div></section>
 
 <section id="hanh-trinh"><div class="wrap">
-  <h2>Lộ trình 12 tháng</h2>
-  <p class="sub">Vài buổi trực tiếp để khởi động, sau đó duy trì đều đặn bằng sinh hoạt tại Làng và lớp trực tuyến.</p>
-  <div class="tl">
-    <div class="m"><div class="dot"><svg class="ico"><use href="#i-survey"/></svg></div><div class="when">Tháng 1–2 · Chuẩn bị</div><p>Làm việc với Ban quản lý Làng, khảo sát hiện trạng, kêu gọi tài trợ, lập mạng lưới chuyên gia và tình nguyện viên.</p></div>
-    <div class="m"><div class="dot"><svg class="ico"><use href="#i-class"/></svg></div><div class="when">Tháng 3 · Khởi động</div><p>Nâng cấp phòng máy; 1–2 buổi đào tạo trực tiếp; tập huấn các Mẹ SOS; đánh giá đầu vào.</p></div>
-    <div class="m"><div class="dot"><svg class="ico"><use href="#i-online"/></svg></div><div class="when">Tháng 4–12 · Duy trì</div><p>Tự học có hướng dẫn hằng tuần do Đại sứ số và Mẹ SOS dẫn; lớp trực tuyến mỗi tháng với chuyên gia.</p></div>
-    <div class="m"><div class="dot"><svg class="ico"><use href="#i-trophy"/></svg></div><div class="when">Tháng 12–13 · Đánh giá</div><p>Khảo sát lại, trưng bày sản phẩm của các em, công bố báo cáo tác động công khai.</p></div>
+  <h2>Lộ trình triển khai</h2>
+  <p class="sub">Chuẩn bị kỹ, khởi động bằng 02 ngày đào tạo trực tiếp, sau đó duy trì đều đặn bằng lớp học trực tuyến mỗi tháng và đánh giá sau 01 năm.</p>
+  <div class="tl five">
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-survey"/></svg></div><div class="when">1. Thống nhất</div><p>Làm việc với Ban Lãnh đạo Làng về mục tiêu, kế hoạch, đầu mối phối hợp, thời gian, địa điểm và số lượng trẻ tham gia.</p></div>
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-tool"/></svg></div><div class="when">2. Chuẩn bị</div><p>Rà soát phòng máy, thiết bị, Internet; thành lập mạng lưới chuyên gia, tình nguyện viên có Trưởng nhóm điều phối.</p></div>
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-class"/></svg></div><div class="when">3. Khởi động · 02 ngày</div><p>Đào tạo trực tiếp: truyền cảm hứng, kỹ năng nền tảng, thực hành trên máy, đánh giá nhu cầu ban đầu.</p></div>
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-online"/></svg></div><div class="when">4. Duy trì · 01 buổi/tháng</div><p>Lớp trực tuyến: workshop chuyên đề, giải đáp thắc mắc, bài tập thực hành, tự học có hướng dẫn, chia sẻ kết quả.</p></div>
+    <div class="m"><div class="dot"><svg class="ico"><use href="#i-trophy"/></svg></div><div class="when">5. Đánh giá · sau 01 năm</div><p>Đo những thay đổi thực tế về kiến thức, kỹ năng, khả năng tự học; điều chỉnh nội dung và nguồn lực cho năm sau.</p></div>
   </div>
 </div></section>
 
 <section id="ket-qua"><div class="wrap">
-  <h2>Kết quả hướng tới sau 12 tháng</h2>
-  <p class="sub">Những con số cụ thể để cộng đồng có thể theo dõi và giám sát.</p>
+  <h2>Con số chính và cách đo hiệu quả</h2>
+  <p class="sub">Dự án không chỉ đếm số hoạt động đã tổ chức, mà đo những thay đổi thực tế của các em sau một năm triển khai.</p>
   <div class="stats">
-    <div class="stat"><div class="ring" data-v="80"><svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3"/><circle class="fg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/></svg><b>≥ 80%</b></div><small>em tham gia đều đặn (≥ 75% số buổi)</small></div>
-    <div class="stat"><div class="ring" data-v="70"><svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3"/><circle class="fg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/></svg><b>≥ 70%</b></div><small>em từ 11 tuổi biết dùng AI và kiểm chứng thông tin</small></div>
-    <div class="stat"><div class="ring" data-v="100"><svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3"/><circle class="fg" cx="18" cy="18" r="15.9" fill="none" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/></svg><b>100%</b></div><small>em được học bộ kiến thức an toàn số</small></div>
-    <div class="stat"><div class="big">10–12</div><small>Đại sứ số (em lớn kèm em nhỏ)</small></div>
-    <div class="stat"><div class="big">≥ 15</div><small>chuyên gia, giảng viên, tình nguyện viên trong mạng lưới</small></div>
-    <div class="stat"><div class="big">≥ 1</div><small>sản phẩm số cho mỗi em, trưng bày cuối năm</small></div>
+    <div class="stat"><div class="big">121</div><small>em được chăm sóc tại Làng trẻ em SOS Hải Phòng (thụ hưởng trực tiếp)</small></div>
+    <div class="stat"><div class="big">3</div><small>nhóm tuổi: 6–10, 11–14, 15–18</small></div>
+    <div class="stat"><div class="big">02</div><small>ngày đào tạo trực tiếp ở giai đoạn đầu</small></div>
+    <div class="stat"><div class="big">01</div><small>buổi học trực tuyến mỗi tháng để duy trì</small></div>
+    <div class="stat"><div class="big">10</div><small>bộ máy tính cùng TV/máy chiếu cho phòng học</small></div>
+    <div class="stat"><div class="big">37 tr</div><small>đồng/năm tối đa để duy trì từ năm thứ hai</small></div>
   </div>
+  <h3 style="margin-top:30px">Dự án đo hiệu quả bằng gì?</h3>
+  <ul class="chk">
+    <li><span class="ic">✔</span><span class="txt"><b>Mức độ tham gia:</b> số trẻ tham gia, tỷ lệ tham dự đủ các buổi, số lượt vào lớp trực tuyến và workshop.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Kỹ năng số và khả năng dùng AI:</b> dùng máy tính, tìm kiếm thông tin, học trực tuyến; dùng AI hỗ trợ học tập, ngoại ngữ, sáng tạo và biết kiểm chứng thông tin AI đưa ra.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Nhận thức an toàn số:</b> bảo vệ dữ liệu cá nhân, nhận diện lừa đảo, tin giả, nội dung độc hại.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Khả năng tự học và kết quả thực hành:</b> chủ động tìm tài liệu, hoàn thành nhiệm vụ tự học; số bài tập, sản phẩm số, bài thuyết trình, nội dung sáng tạo.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Nhóm 15–18 tuổi:</b> số em biết xây dựng CV, hồ sơ năng lực; tìm khóa học, học bổng, ngành nghề phù hợp.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Mạng lưới và khả năng duy trì:</b> số chuyên gia, tình nguyện viên tham gia; mức độ chủ động của các Mẹ SOS, cán bộ Làng sau các buổi đào tạo.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Mức độ hài lòng:</b> phản hồi của các em, các Mẹ và cán bộ Làng về tính hữu ích, sự phù hợp của chương trình.</span></li>
+  </ul>
+  <p style="margin-top:14px">Kết quả đánh giá là cơ sở để điều chỉnh nội dung đào tạo, phương pháp triển khai và phân bổ nguồn lực cho năm tiếp theo.</p>
 </div></section>
 
 <section id="ngan-sach"><div class="wrap">
   <h2>Nguồn lực và ngân sách</h2>
-  <p class="sub">Ưu tiên tận dụng cơ sở vật chất sẵn có, nâng cấp máy cũ trước và huy động tài trợ hiện vật, chuyên môn. Số liệu dưới đây là trường hợp phải mua mới toàn bộ.</p>
+  <p class="sub">Ưu tiên tận dụng cơ sở vật chất sẵn có, nâng cấp máy cũ trước và huy động tài trợ hiện vật, chuyên môn. Số liệu dưới đây là mức tối đa nếu dự án phải tự trang bị mới toàn bộ; nếu nhận được tài trợ bằng máy móc, phần mềm, dịch vụ và nhân lực chuyên môn, số kinh phí cần huy động có thể giảm đáng kể.</p>
 
-  <h3>Năm đầu: tối đa 135 triệu đồng</h3>
-  <div class="bar" role="img" aria-label="Cơ cấu ngân sách năm đầu: thiết bị 120 triệu, bảo trì 10 triệu, dự phòng 5 triệu">
-    <i style="width:88.9%;background:var(--brand)"></i><i style="width:7.4%;background:var(--sun)"></i><i style="width:3.7%;background:var(--sky)"></i>
+  <h3>Năm đầu: tối đa 197 triệu đồng</h3>
+  <div class="bar" role="img" aria-label="Cơ cấu ngân sách năm đầu: máy tính và TV 160 triệu, bảo trì 8 triệu, Internet 12 triệu, chuyên gia 8 triệu, học liệu, phần thưởng và dự phòng 9 triệu">
+    <i style="width:81.2%;background:var(--brand)"></i><i style="width:4.1%;background:var(--sun)"></i><i style="width:6.1%;background:var(--sky)"></i><i style="width:4.1%;background:var(--brand2)"></i><i style="width:4.5%;background:var(--ok)"></i>
   </div>
-  <div class="legend"><span style="--c:var(--brand)">Thiết bị 120 triệu</span><span style="--c:var(--sun)">Vận hành, bảo trì 10 triệu</span><span style="--c:var(--sky)">Dự phòng 5 triệu</span><span>Từ năm 2: tối đa <b>15 triệu/năm</b></span></div>
+  <div class="legend"><span style="--c:var(--brand)">Máy tính, TV/máy chiếu 160 triệu</span><span style="--c:var(--sun)">Vận hành, bảo trì 8 triệu</span><span style="--c:var(--sky)">Internet 12 triệu</span><span style="--c:var(--brand2)">Chuyên gia, đào tạo 8 triệu</span><span style="--c:var(--ok)">Học liệu, phần thưởng, dự phòng 9 triệu</span><span>Từ năm 2: tối đa <b>37 triệu/năm</b></span></div>
 
   <h3>Một gói đồng hành gồm những gì?</h3>
   <div class="pkg">
-    <div class="p"><svg class="ico"><use href="#i-pc"/></svg><b>Máy tính</b><small>10 bộ + 1 TV/máy chiếu</small></div>
+    <div class="p"><svg class="ico"><use href="#i-pc"/></svg><b>Máy tính</b><small>10 bộ + TV/máy chiếu</small></div>
     <div class="p"><svg class="ico"><use href="#i-wifi"/></svg><b>Internet</b><small>Đường truyền ổn định</small></div>
     <div class="p"><svg class="ico"><use href="#i-expert"/></svg><b>Chuyên gia</b><small>Dạy và đồng hành</small></div>
     <div class="p"><svg class="ico"><use href="#i-book"/></svg><b>Học liệu</b><small>Tài nguyên mở, tài khoản học</small></div>
@@ -372,20 +403,23 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   <div class="tw"><table>
     <thead><tr><th>Hạng mục</th><th>Chi phí dự kiến</th><th>Ghi chú</th></tr></thead>
     <tbody>
-      <tr><td>Cơ sở vật chất (phòng, bàn ghế, điện, Internet)</td><td>0 đồng</td><td>Sử dụng sẵn có của Làng</td></tr>
-      <tr><td>10 bộ máy tính + 1 TV/máy chiếu</td><td>120 triệu đồng</td><td>Ưu tiên thiết bị được tài trợ</td></tr>
-      <tr><td>Vận hành, bảo trì</td><td>10 triệu/năm</td><td>Ưu tiên bảo trợ kỹ thuật</td></tr>
-      <tr><td>Chuyên gia, học liệu, nền tảng học</td><td>0 đồng</td><td>Tình nguyện, tài nguyên mở, tài khoản tài trợ</td></tr>
-      <tr><td>Dự phòng</td><td>5 triệu/năm</td><td>Chỉ dùng khi phát sinh</td></tr>
-      <tr><th>Năm đầu</th><th>135 triệu đồng</th><th>120 + 10 + 5</th></tr>
-      <tr><th>Từ năm thứ hai</th><th>tối đa 15 triệu/năm</th><th>10 + 5</th></tr>
+      <tr><td>(1) Cơ sở vật chất: 01 phòng máy 20–30 m², 10 bộ bàn ghế, hệ thống điện cơ bản</td><td>0 đồng</td><td>Sử dụng sẵn có của Làng</td></tr>
+      <tr><td>(2) 10 bộ máy tính đồng bộ (Core i3 14100, RAM 8GB DDR5, SSD 256GB, màn hình 21–22 inch Full HD, webcam/tai nghe) 150 triệu; TV 60–65 inch hoặc máy chiếu Full HD 10 triệu</td><td>160 triệu đồng</td><td>Ưu tiên tài trợ thiết bị mới, hoặc thiết bị đã qua sử dụng còn tốt</td></tr>
+      <tr><td>(3) Duy trì, vận hành, bảo trì: vệ sinh, kiểm tra máy định kỳ, thay linh kiện nhỏ, cập nhật phần mềm, hỗ trợ kỹ thuật</td><td>8 triệu/năm</td><td>Ưu tiên kêu gọi tài trợ</td></tr>
+      <tr><td>(4) Đường truyền Internet theo gói ưu đãi cho giáo dục</td><td>12 triệu/năm</td><td>Ưu tiên kêu gọi tài trợ</td></tr>
+      <tr><td>(5) Chuyên gia, kỹ sư đào tạo: thù lao (12 buổi/năm) 6 triệu; đi lại, ăn ở cho 02 ngày đào tạo trực tiếp 2 triệu</td><td>8 triệu đồng</td><td>Ưu tiên kêu gọi đội ngũ đào tạo miễn phí</td></tr>
+      <tr><td>(6) Tài liệu, nền tảng số: giáo trình điện tử, công cụ AI, nền tảng học trực tuyến</td><td>3 triệu/năm</td><td>Ưu tiên tài nguyên mở, bản miễn phí hoặc tài khoản được tài trợ</td></tr>
+      <tr><td>(7) Phần thưởng khích lệ cho 02 ngày đào tạo đầu: quà minigame, chứng nhận, giải AI Challenge</td><td>1 triệu đồng</td><td>Ưu tiên kêu gọi tài trợ</td></tr>
+      <tr><td>(8) Chi phí phát sinh, dự phòng</td><td>5 triệu/năm</td><td>Chỉ dùng khi phát sinh</td></tr>
+      <tr><th>Năm đầu = (2)+(3)+(4)+(5)+(6)+(7)+(8)</th><th>197 triệu đồng</th><th>Có thể huy động 100% từ tài trợ tiền mặt hoặc hiện vật, dịch vụ, chuyên môn</th></tr>
+      <tr><th>Năm tiếp theo = (3)+(4)+(5)+(6)+(7)+(8)</th><th>37 triệu đồng</th><th>Có thể huy động 100% từ tài trợ</th></tr>
     </tbody></table></div>
-  <p><span class="note">Chi phí thực tế xác định sau khảo sát và báo giá; mọi đóng góp được công khai trong báo cáo định kỳ.</span></p>
+  <p><span class="note">Các mức chi phí là dự toán để xác định quy mô nguồn lực. Chi phí thực tế xác định sau khảo sát hiện trạng, báo giá tại thời điểm triển khai và giá trị tài trợ huy động được.</span></p>
 </div></section>
 
 <section id="dong-hanh"><div class="wrap">
   <h2>Cùng đồng hành với “Ánh sáng Công nghệ”</h2>
-  <p class="sub">Nguồn lực không chỉ đo bằng tiền. Một bộ máy tính, một tài khoản phần mềm, một đường truyền, một giờ chia sẻ của chuyên gia đều là phần quan trọng của dự án.</p>
+  <p class="sub">Nguồn lực không chỉ đo bằng tiền. Toàn bộ chi phí có thể được huy động 100% từ tài trợ tiền mặt, hoặc xã hội hóa bằng hiện vật, dịch vụ và chuyên môn theo thế mạnh của từng đơn vị. Một bộ máy tính, một tài khoản phần mềm, một đường truyền, một giờ chia sẻ của chuyên gia đều là phần quan trọng của dự án.</p>
   <div class="eco">
     <svg viewBox="0 0 640 440" role="img" aria-label="Sơ đồ: dự án ở trung tâm, kết nối với sáu nhóm đối tác">
       <g stroke="var(--line)" stroke-width="3">
@@ -407,7 +441,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   <div class="grid">
     <div class="card"><div class="chip"><svg class="ico"><use href="#i-pc"/></svg></div><h3>Doanh nghiệp công nghệ</h3><p>Máy tính, thiết bị, phần mềm, hỗ trợ kỹ thuật, chuyên gia giảng dạy.</p></div>
     <div class="card"><div class="chip sky"><svg class="ico"><use href="#i-wifi"/></svg></div><h3>Doanh nghiệp viễn thông</h3><p>Đường truyền Internet ổn định cho phòng học.</p></div>
-    <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-ai"/></svg></div><h3>Chuyên gia AI và an toàn mạng</h3><p>Xây nội dung, dạy và dẫn workshop trực tuyến 1–2 giờ/tháng.</p></div>
+    <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-ai"/></svg></div><h3>Chuyên gia AI và an toàn mạng</h3><p>Đồng hành xây dựng nội dung, trực tiếp đào tạo và dẫn workshop trực tuyến.</p></div>
     <div class="card"><div class="chip sky"><svg class="ico"><use href="#i-uni"/></svg></div><h3>Trường đại học, đơn vị giáo dục</h3><p>Giảng viên, sinh viên tình nguyện, học liệu, khóa học, tài khoản ngoại ngữ.</p></div>
     <div class="card"><div class="chip"><svg class="ico"><use href="#i-tool"/></svg></div><h3>Đơn vị cung cấp thiết bị</h3><p>Bảo trì, bảo dưỡng định kỳ.</p></div>
     <div class="card"><div class="chip sun"><svg class="ico"><use href="#i-heart"/></svg></div><h3>Nhà hảo tâm</h3><p>Hỗ trợ kinh phí cho các hạng mục chưa huy động đủ hiện vật.</p></div>
@@ -419,16 +453,18 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
   <h2>Bền vững và nhân rộng</h2>
   <p class="sub">Từ một phòng học nhỏ ở Hải Phòng đến nhiều nơi cần mô hình này.</p>
   <div class="flow">
-    <div class="f"><div class="chip"><svg class="ico"><use href="#i-class"/></svg></div><b>1. Học tại Làng</b><p>Đại sứ số kèm em nhỏ; Mẹ SOS và cán bộ duy trì sinh hoạt hằng tuần.</p></div>
+    <div class="f"><div class="chip"><svg class="ico"><use href="#i-class"/></svg></div><b>1. Học tại Làng</b><p>Đại sứ số kèm em nhỏ; Mẹ SOS và cán bộ tiếp tục hướng dẫn, giám sát các em; thiết bị bàn giao cho Làng dùng lâu dài.</p></div>
     <div class="f"><div class="chip sky"><svg class="ico"><use href="#i-online"/></svg></div><b>2. Học cùng mentor trực tuyến</b><p>Chuyên gia, giảng viên, sinh viên ở nhiều nơi đồng hành mỗi tháng.</p></div>
-    <div class="f"><div class="chip sun"><svg class="ico"><use href="#i-spread"/></svg></div><b>3. Lan tỏa ra cộng đồng</b><p>Đóng gói bộ mô hình, học liệu số để chuyển giao.</p></div>
+    <div class="f"><div class="chip sun"><svg class="ico"><use href="#i-spread"/></svg></div><b>3. Lan tỏa ra cộng đồng</b><p>Chuẩn hóa thành bộ mô hình: danh mục thiết bị, chương trình theo nhóm tuổi, tài liệu an toàn số, quy trình đào tạo, bộ tiêu chí đánh giá, hướng dẫn xây dựng Đại sứ số.</p></div>
   </div>
-  <div class="spread"><span>Các Làng trẻ em SOS khác</span><span>Trung tâm bảo trợ xã hội</span><span>Mái ấm, cơ sở chăm sóc trẻ</span><span>Trường học vùng khó khăn</span></div>
+  <div class="spread"><span>Các Làng trẻ em SOS khác</span><span>Trung tâm bảo trợ xã hội</span><span>Mái ấm, cơ sở chăm sóc trẻ</span><span>Trường học vùng khó khăn</span><span>Địa phương cần nâng cao kỹ năng số cho trẻ</span></div>
   <ul class="chk" style="margin-top:22px">
     <li><span class="ic">✔</span><span class="txt"><b>Đại sứ số:</b> em lớn kèm em nhỏ, tự duy trì trong chính cộng đồng Làng.</span></li>
     <li><span class="ic">✔</span><span class="txt"><b>Mẹ SOS và cán bộ</b> được trang bị kiến thức để tiếp tục hướng dẫn, giám sát các em.</span></li>
     <li><span class="ic">✔</span><span class="txt"><b>Đào tạo trực tuyến</b> giúp chuyên gia ở mọi nơi cùng đồng hành mà không tốn chi phí đi lại.</span></li>
     <li><span class="ic">✔</span><span class="txt"><b>Học liệu số</b> được lưu trữ, cập nhật hằng năm và dùng lại cho các khóa sau.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Mạng lưới mentor và tình nguyện viên:</b> nhiều người cùng đóng góp một phần nhỏ nhưng duy trì được lâu dài, thay vì phụ thuộc vào một hai chuyên gia cố định.</span></li>
+    <li><span class="ic">✔</span><span class="txt"><b>Chi phí duy trì hợp lý:</b> từ năm thứ hai chỉ khoảng 37 triệu đồng/năm tối đa, tập trung vào bảo trì, Internet, tài liệu và phát sinh cần thiết.</span></li>
   </ul>
   <div class="protect">
     <svg class="ico"><use href="#i-shield"/></svg>
@@ -450,7 +486,7 @@ footer{border-top:1px solid var(--line);padding:30px 0 70px;color:var(--muted);t
 </div></section>
 </main>
 
-<footer><div class="wrap">Dự án Nhân ái “Ánh sáng Công nghệ” · Đinh Diệu Anh – SBD 186 · Hoa hậu Việt Nam 2026 – Miền Hương Sắc<br><small>Đây là trang giới thiệu dự án của thí sinh trong phần thi Đại sứ Nhân ái.</small></div></footer>
+<footer><div class="wrap"><img class="logo" src="images/hhvn-banner.jpg" alt="Logo Hoa hậu Việt Nam 2026" width="176" height="64" loading="lazy"><br>Dự án Nhân ái “Ánh sáng Công nghệ” · Đinh Diệu Anh – SBD 186 · Hoa hậu Việt Nam 2026 – Miền Hương Sắc<br><small>Đây là trang giới thiệu dự án của thí sinh trong phần thi Đại sứ Nhân ái.</small></div></footer>
 <button id="fab" type="button" aria-label="Về đầu trang">↑</button>
 
 <script>
